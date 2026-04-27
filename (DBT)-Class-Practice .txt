@@ -1,0 +1,1204 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| d1                 |
+| d2                 |
+| db3                |
+| employeee          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.01 sec)
+
+mysql> USE DB3;
+Database changed
+
+mysql> CREATE TABLE X(C1 INT,C2 BOOLEAN);
+Query OK, 0 rows affected (0.15 sec)
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+2 rows in set (0.04 sec)
+
+mysql> ALTER TABLE X ADD COLUMN C4 INT;
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X ADD COLUMN C3 INT AFTER C2;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X ADD COLUMN C0 INT FIRST;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| C0    | int        | YES  |     | NULL    |       |
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X ADD C5 INT AFTER C4;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| C0    | int        | YES  |     | NULL    |       |
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
+| C5    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X ADD C6 INT AFTER C5;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| C0    | int        | YES  |     | NULL    |       |
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
+| C5    | int        | YES  |     | NULL    |       |
+| C6    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X ADD (C7 INT,C8 INT);
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| C0    | int        | YES  |     | NULL    |       |
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
+| C5    | int        | YES  |     | NULL    |       |
+| C6    | int        | YES  |     | NULL    |       |
+| C7    | int        | YES  |     | NULL    |       |
+| C8    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X CHANGE C0 ID INT;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| ID    | int        | YES  |     | NULL    |       |
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
+| C5    | int        | YES  |     | NULL    |       |
+| C6    | int        | YES  |     | NULL    |       |
+| C7    | int        | YES  |     | NULL    |       |
+| C8    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X CHANGE C7 ID1 INT;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| ID    | int        | YES  |     | NULL    |       |
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
+| C5    | int        | YES  |     | NULL    |       |
+| C6    | int        | YES  |     | NULL    |       |
+| ID1   | int        | YES  |     | NULL    |       |
+| C8    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X DROP COLUMN C8;
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| ID    | int        | YES  |     | NULL    |       |
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
+| C5    | int        | YES  |     | NULL    |       |
+| C6    | int        | YES  |     | NULL    |       |
+| ID1   | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X DROP ID1;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| ID    | int        | YES  |     | NULL    |       |
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
+| C5    | int        | YES  |     | NULL    |       |
+| C6    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> INSERT INTO X VALUES(1,1,1,1,1,1,1);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> DESC X;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| ID    | int        | YES  |     | NULL    |       |
+| C1    | int        | YES  |     | NULL    |       |
+| C2    | tinyint(1) | YES  |     | NULL    |       |
+| C3    | int        | YES  |     | NULL    |       |
+| C4    | int        | YES  |     | NULL    |       |
+| C5    | int        | YES  |     | NULL    |       |
+| C6    | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT * FROM X;
++------+------+------+------+------+------+------+
+| ID   | C1   | C2   | C3   | C4   | C5   | C6   |
++------+------+------+------+------+------+------+
+|    1 |    1 |    1 |    1 |    1 |    1 |    1 |
++------+------+------+------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> TABLE X;
++------+------+------+------+------+------+------+
+| ID   | C1   | C2   | C3   | C4   | C5   | C6   |
++------+------+------+------+------+------+------+
+|    1 |    1 |    1 |    1 |    1 |    1 |    1 |
++------+------+------+------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> TABLE X;
++------+------+------+------+------+------+------+
+| ID   | C1   | C2   | C3   | C4   | C5   | C6   |
++------+------+------+------+------+------+------+
+|    1 |    1 |    1 |    1 |    1 |    1 |    1 |
++------+------+------+------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> ROLLBACK;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> TABLE X;
++------+------+------+------+------+------+------+
+| ID   | C1   | C2   | C3   | C4   | C5   | C6   |
++------+------+------+------+------+------+------+
+|    1 |    1 |    1 |    1 |    1 |    1 |    1 |
++------+------+------+------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> ROLLBACK ;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> TABLE X;
++------+------+------+------+------+------+------+
+| ID   | C1   | C2   | C3   | C4   | C5   | C6   |
++------+------+------+------+------+------+------+
+|    1 |    1 |    1 |    1 |    1 |    1 |    1 |
++------+------+------+------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO X VALUES(1,1,1,1,1,1,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> COMMIT;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> TABLE X;
++------+------+------+------+------+------+------+
+| ID   | C1   | C2   | C3   | C4   | C5   | C6   |
++------+------+------+------+------+------+------+
+|    1 |    1 |    1 |    1 |    1 |    1 |    1 |
+|    1 |    1 |    1 |    1 |    1 |    1 |    1 |
++------+------+------+------+------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO X VALUES(2,2,2,2,2,2,2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> COMMIT;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> TABLE X;
++------+------+------+------+------+------+------+
+| ID   | C1   | C2   | C3   | C4   | C5   | C6   |
++------+------+------+------+------+------+------+
+|    1 |    1 |    1 |    1 |    1 |    1 |    1 |
+|    1 |    1 |    1 |    1 |    1 |    1 |    1 |
+|    2 |    2 |    2 |    2 |    2 |    2 |    2 |
++------+------+------+------+------+------+------+
+3 rows in set (0.00 sec)
+
+mysql> alter table x change c1 ename varchar(20), change c2 city varchar(10);
+Query OK, 3 rows affected (0.11 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | YES  |     | NULL    |       |
+| ename | varchar(20) | YES  |     | NULL    |       |
+| city  | varchar(10) | YES  |     | NULL    |       |
+| C3    | int         | YES  |     | NULL    |       |
+| C4    | int         | YES  |     | NULL    |       |
+| C5    | int         | YES  |     | NULL    |       |
+| C6    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X CHANGE C3 BLOODGROUP CHAR(3) AFTER ENAME;
+Query OK, 3 rows affected (0.10 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| ID         | int         | YES  |     | NULL    |       |
+| ename      | varchar(20) | YES  |     | NULL    |       |
+| BLOODGROUP | char(3)     | YES  |     | NULL    |       |
+| city       | varchar(10) | YES  |     | NULL    |       |
+| C4         | int         | YES  |     | NULL    |       |
+| C5         | int         | YES  |     | NULL    |       |
+| C6         | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X ALTER COLUMN CITY SET DEFAULT 'BARODA';
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| ID         | int         | YES  |     | NULL    |       |
+| ename      | varchar(20) | YES  |     | NULL    |       |
+| BLOODGROUP | char(3)     | YES  |     | NULL    |       |
+| city       | varchar(10) | YES  |     | BARODA  |       |
+| C4         | int         | YES  |     | NULL    |       |
+| C5         | int         | YES  |     | NULL    |       |
+| C6         | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> SET AUTOCOMMIT =OFF;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> DESC X;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| ID         | int         | YES  |     | NULL    |       |
+| ename      | varchar(20) | YES  |     | NULL    |       |
+| BLOODGROUP | char(3)     | YES  |     | NULL    |       |
+| city       | varchar(10) | YES  |     | BARODA  |       |
+| C4         | int         | YES  |     | NULL    |       |
+| C5         | int         | YES  |     | NULL    |       |
+| C6         | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X ADD PWD VARCHAR(10);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| ID         | int         | YES  |     | NULL    |       |
+| ename      | varchar(20) | YES  |     | NULL    |       |
+| BLOODGROUP | char(3)     | YES  |     | NULL    |       |
+| city       | varchar(10) | YES  |     | BARODA  |       |
+| C4         | int         | YES  |     | NULL    |       |
+| C5         | int         | YES  |     | NULL    |       |
+| C6         | int         | YES  |     | NULL    |       |
+| PWD        | varchar(10) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> alter  table x alter column pwd set invisible;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> DESC X;
++------------+-------------+------+-----+---------+-----------+
+| Field      | Type        | Null | Key | Default | Extra     |
++------------+-------------+------+-----+---------+-----------+
+| ID         | int         | YES  |     | NULL    |           |
+| ename      | varchar(20) | YES  |     | NULL    |           |
+| BLOODGROUP | char(3)     | YES  |     | NULL    |           |
+| city       | varchar(10) | YES  |     | BARODA  |           |
+| C4         | int         | YES  |     | NULL    |           |
+| C5         | int         | YES  |     | NULL    |           |
+| C6         | int         | YES  |     | NULL    |           |
+| PWD        | varchar(10) | YES  |     | NULL    | INVISIBLE |
++------------+-------------+------+-----+---------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> alter  table x alter column pwd set VISIBLE;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| ID         | int         | YES  |     | NULL    |       |
+| ename      | varchar(20) | YES  |     | NULL    |       |
+| BLOODGROUP | char(3)     | YES  |     | NULL    |       |
+| city       | varchar(10) | YES  |     | BARODA  |       |
+| C4         | int         | YES  |     | NULL    |       |
+| C5         | int         | YES  |     | NULL    |       |
+| C6         | int         | YES  |     | NULL    |       |
+| PWD        | varchar(10) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X MODIFY PWD VARBINARY (20);
+Query OK, 3 rows affected (0.10 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| ID         | int           | YES  |     | NULL    |       |
+| ename      | varchar(20)   | YES  |     | NULL    |       |
+| BLOODGROUP | char(3)       | YES  |     | NULL    |       |
+| city       | varchar(10)   | YES  |     | BARODA  |       |
+| C4         | int           | YES  |     | NULL    |       |
+| C5         | int           | YES  |     | NULL    |       |
+| C6         | int           | YES  |     | NULL    |       |
+| PWD        | varbinary(20) | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X MODIFY C4 VARCHAR(20);
+Query OK, 3 rows affected (0.19 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| ID         | int           | YES  |     | NULL    |       |
+| ename      | varchar(20)   | YES  |     | NULL    |       |
+| BLOODGROUP | char(3)       | YES  |     | NULL    |       |
+| city       | varchar(10)   | YES  |     | BARODA  |       |
+| C4         | varchar(20)   | YES  |     | NULL    |       |
+| C5         | int           | YES  |     | NULL    |       |
+| C6         | int           | YES  |     | NULL    |       |
+| PWD        | varbinary(20) | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X MODIFY C4 INT;
+Query OK, 3 rows affected (0.11 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| ID         | int           | YES  |     | NULL    |       |
+| ename      | varchar(20)   | YES  |     | NULL    |       |
+| BLOODGROUP | char(3)       | YES  |     | NULL    |       |
+| city       | varchar(10)   | YES  |     | BARODA  |       |
+| C4         | int           | YES  |     | NULL    |       |
+| C5         | int           | YES  |     | NULL    |       |
+| C6         | int           | YES  |     | NULL    |       |
+| PWD        | varbinary(20) | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X MODIFY ID VARCHAR(10);
+Query OK, 3 rows affected (0.11 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| ID         | varchar(10)   | YES  |     | NULL    |       |
+| ename      | varchar(20)   | YES  |     | NULL    |       |
+| BLOODGROUP | char(3)       | YES  |     | NULL    |       |
+| city       | varchar(10)   | YES  |     | BARODA  |       |
+| C4         | int           | YES  |     | NULL    |       |
+| C5         | int           | YES  |     | NULL    |       |
+| C6         | int           | YES  |     | NULL    |       |
+| PWD        | varbinary(20) | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> ALTER TABLE X MODIFY BLOODGROUP VARCHAR(3);
+Query OK, 3 rows affected (0.10 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> DESC X;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| ID         | varchar(10)   | YES  |     | NULL    |       |
+| ename      | varchar(20)   | YES  |     | NULL    |       |
+| BLOODGROUP | varchar(3)    | YES  |     | NULL    |       |
+| city       | varchar(10)   | YES  |     | BARODA  |       |
+| C4         | int           | YES  |     | NULL    |       |
+| C5         | int           | YES  |     | NULL    |       |
+| C6         | int           | YES  |     | NULL    |       |
+| PWD        | varbinary(20) | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT 100,200;
++-----+-----+
+| 100 | 200 |
++-----+-----+
+| 100 | 200 |
++-----+-----+
+1 row in set (0.00 sec)
+
+mysql> SELECT 100 + 200;
++-----------+
+| 100 + 200 |
++-----------+
+|       300 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 100-200'
+    '> SELECT 100-200;
+    '> ^C
+mysql> SELECT 100-200;
++---------+
+| 100-200 |
++---------+
+|    -100 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 100 R1,200 R2,100+200 R3;
++-----+-----+-----+
+| R1  | R2  | R3  |
++-----+-----+-----+
+| 100 | 200 | 300 |
++-----+-----+-----+
+1 row in set (0.00 sec)
+
+mysql> SELECT 7/3;
++--------+
+| 7/3    |
++--------+
+| 2.3333 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> USE DB3;
+Database changed
+
+mysql> DESC EMP;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| ID     | int         | YES  |     | NULL    |       |
+| NAME   | varchar(50) | YES  |     | NULL    |       |
+| SALARY | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| d1                 |
+| d2                 |
+| db3                |
+| employeee          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.01 sec)
+
+mysql> TABLE EMP;
++------+---------+--------+
+| ID   | NAME    | SALARY |
++------+---------+--------+
+|    1 | Mayuri  |     25 |
+|    2 | Priya   |     30 |
+|    3 | Swapnil |     29 |
+|    4 | Tushar  |     28 |
+|    5 | Tanu    |     22 |
++------+---------+--------+
+5 rows in set (0.02 sec)
+
+mysql> USE D1;
+Database changed
+mysql> TABLE EMP;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.01 sec)
+
+mysql> SELECT '123ABC';
++--------+
+| 123ABC |
++--------+
+| 123ABC |
++--------+
+1 row in set (0.00 sec)
+
+mysql> SELECT '123ABC'/1;
++------------+
+| '123ABC'/1 |
++------------+
+|        123 |
++------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT 'ABC123ABC'/1;
++---------------+
+| 'ABC123ABC'/1 |
++---------------+
+|             0 |
++---------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT 'ABC123ABC'/0;
++---------------+
+| 'ABC123ABC'/0 |
++---------------+
+|          NULL |
++---------------+
+1 row in set, 2 warnings (0.00 sec)
+
+mysql> SELECT '123ABC'/0;
++------------+
+| '123ABC'/0 |
++------------+
+|       NULL |
++------------+
+1 row in set, 2 warnings (0.00 sec)
+
+mysql> SELECT '123ABC'/2;
++------------+
+| '123ABC'/2 |
++------------+
+|       61.5 |
++------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT '123ABC'/3;
++------------+
+| '123ABC'/3 |
++------------+
+|         41 |
++------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT 'ABC123ABC'/3;
++---------------+
+| 'ABC123ABC'/3 |
++---------------+
+|             0 |
++---------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT 'ABC123ABCD'/3;
++----------------+
+| 'ABC123ABCD'/3 |
++----------------+
+|              0 |
++----------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT 'ABCFF123ABC'/3;
++-----------------+
+| 'ABCFF123ABC'/3 |
++-----------------+
+|               0 |
++-----------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT SAL FROM EMP;
++------+
+| SAL  |
++------+
+| 1750 |
+| 1750 |
+| 1750 |
+| 1750 |
+|  800 |
+| 3350 |
+| 1750 |
+| 1600 |
+| 1250 |
+| 2975 |
+| 1250 |
+| 2850 |
+| 2450 |
+| 3000 |
+| 5000 |
+| 5000 |
+| 1500 |
+| 1100 |
+| 2000 |
+| 1000 |
+|  950 |
+| 3000 |
+| 4150 |
+| 2575 |
+| 1300 |
+| 1350 |
+| 1250 |
+| 1750 |
+| 1750 |
+| 1750 |
++------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT SAL ,SAL%2 FROM EMP;
++------+-------+
+| SAL  | SAL%2 |
++------+-------+
+| 1750 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
+|  800 |     0 |
+| 3350 |     0 |
+| 1750 |     0 |
+| 1600 |     0 |
+| 1250 |     0 |
+| 2975 |     1 |
+| 1250 |     0 |
+| 2850 |     0 |
+| 2450 |     0 |
+| 3000 |     0 |
+| 5000 |     0 |
+| 5000 |     0 |
+| 1500 |     0 |
+| 1100 |     0 |
+| 2000 |     0 |
+| 1000 |     0 |
+|  950 |     0 |
+| 3000 |     0 |
+| 4150 |     0 |
+| 2575 |     1 |
+| 1300 |     0 |
+| 1350 |     0 |
+| 1250 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
++------+-------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT SAL ,SAL%1 FROM EMP;
++------+-------+
+| SAL  | SAL%1 |
++------+-------+
+| 1750 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
+|  800 |     0 |
+| 3350 |     0 |
+| 1750 |     0 |
+| 1600 |     0 |
+| 1250 |     0 |
+| 2975 |     0 |
+| 1250 |     0 |
+| 2850 |     0 |
+| 2450 |     0 |
+| 3000 |     0 |
+| 5000 |     0 |
+| 5000 |     0 |
+| 1500 |     0 |
+| 1100 |     0 |
+| 2000 |     0 |
+| 1000 |     0 |
+|  950 |     0 |
+| 3000 |     0 |
+| 4150 |     0 |
+| 2575 |     0 |
+| 1300 |     0 |
+| 1350 |     0 |
+| 1250 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
++------+-------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT SAL ,SAL%2=1 FROM EMP;
++------+---------+
+| SAL  | SAL%2=1 |
++------+---------+
+| 1750 |       0 |
+| 1750 |       0 |
+| 1750 |       0 |
+| 1750 |       0 |
+|  800 |       0 |
+| 3350 |       0 |
+| 1750 |       0 |
+| 1600 |       0 |
+| 1250 |       0 |
+| 2975 |       1 |
+| 1250 |       0 |
+| 2850 |       0 |
+| 2450 |       0 |
+| 3000 |       0 |
+| 5000 |       0 |
+| 5000 |       0 |
+| 1500 |       0 |
+| 1100 |       0 |
+| 2000 |       0 |
+| 1000 |       0 |
+|  950 |       0 |
+| 3000 |       0 |
+| 4150 |       0 |
+| 2575 |       1 |
+| 1300 |       0 |
+| 1350 |       0 |
+| 1250 |       0 |
+| 1750 |       0 |
+| 1750 |       0 |
+| 1750 |       0 |
++------+---------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT SAL ,SAL%2 FROM EMP WHERE SAL% 2;
++------+-------+
+| SAL  | SAL%2 |
++------+-------+
+| 2975 |     1 |
+| 2575 |     1 |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT SAL ,SAL%2 FROM EMP WHERE SAL% 2=0;
++------+-------+
+| SAL  | SAL%2 |
++------+-------+
+| 1750 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
+|  800 |     0 |
+| 3350 |     0 |
+| 1750 |     0 |
+| 1600 |     0 |
+| 1250 |     0 |
+| 1250 |     0 |
+| 2850 |     0 |
+| 2450 |     0 |
+| 3000 |     0 |
+| 5000 |     0 |
+| 5000 |     0 |
+| 1500 |     0 |
+| 1100 |     0 |
+| 2000 |     0 |
+| 1000 |     0 |
+|  950 |     0 |
+| 3000 |     0 |
+| 4150 |     0 |
+| 1300 |     0 |
+| 1350 |     0 |
+| 1250 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
+| 1750 |     0 |
++------+-------+
+28 rows in set (0.00 sec)
+
+mysql> SELECT SAL ,SAL%2 FROM EMP WHERE SAL% 2=1;
++------+-------+
+| SAL  | SAL%2 |
++------+-------+
+| 2975 |     1 |
+| 2575 |     1 |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT SAL,COMM,SAL/COMM R1 FROM EMP;
++------+------+--------+
+| SAL  | COMM | R1     |
++------+------+--------+
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+|  800 | NULL |   NULL |
+| 3350 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+| 1600 |  300 | 5.3333 |
+| 1250 |  500 | 2.5000 |
+| 2975 | NULL |   NULL |
+| 1250 | 1400 | 0.8929 |
+| 2850 | NULL |   NULL |
+| 2450 | NULL |   NULL |
+| 3000 | NULL |   NULL |
+| 5000 | NULL |   NULL |
+| 5000 | NULL |   NULL |
+| 1500 |    0 |   NULL |
+| 1100 | NULL |   NULL |
+| 2000 | NULL |   NULL |
+| 1000 | NULL |   NULL |
+|  950 | NULL |   NULL |
+| 3000 | NULL |   NULL |
+| 4150 | NULL |   NULL |
+| 2575 | 2700 | 0.9537 |
+| 1300 | 1300 | 1.0000 |
+| 1350 | 2700 | 0.5000 |
+| 1250 |  500 | 2.5000 |
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
++------+------+--------+
+30 rows in set, 1 warning (0.00 sec)
+
+mysql> SELECT SAL,COMM,SAL/COMM AS "R1" FROM EMP;
++------+------+--------+
+| SAL  | COMM | R1     |
++------+------+--------+
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+|  800 | NULL |   NULL |
+| 3350 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+| 1600 |  300 | 5.3333 |
+| 1250 |  500 | 2.5000 |
+| 2975 | NULL |   NULL |
+| 1250 | 1400 | 0.8929 |
+| 2850 | NULL |   NULL |
+| 2450 | NULL |   NULL |
+| 3000 | NULL |   NULL |
+| 5000 | NULL |   NULL |
+| 5000 | NULL |   NULL |
+| 1500 |    0 |   NULL |
+| 1100 | NULL |   NULL |
+| 2000 | NULL |   NULL |
+| 1000 | NULL |   NULL |
+|  950 | NULL |   NULL |
+| 3000 | NULL |   NULL |
+| 4150 | NULL |   NULL |
+| 2575 | 2700 | 0.9537 |
+| 1300 | 1300 | 1.0000 |
+| 1350 | 2700 | 0.5000 |
+| 1250 |  500 | 2.5000 |
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
+| 1750 | NULL |   NULL |
++------+------+--------+
+30 rows in set, 1 warning (0.00 sec)
+
+mysql> SELECT 100/NULL;
++----------+
+| 100/NULL |
++----------+
+|     NULL |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 100+NULL;
++----------+
+| 100+NULL |
++----------+
+|     NULL |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SAL ,SAL+100 AS"NEW SAL"FROM EMP;
++------+---------+
+| SAL  | NEW SAL |
++------+---------+
+| 1750 |    1850 |
+| 1750 |    1850 |
+| 1750 |    1850 |
+| 1750 |    1850 |
+|  800 |     900 |
+| 3350 |    3450 |
+| 1750 |    1850 |
+| 1600 |    1700 |
+| 1250 |    1350 |
+| 2975 |    3075 |
+| 1250 |    1350 |
+| 2850 |    2950 |
+| 2450 |    2550 |
+| 3000 |    3100 |
+| 5000 |    5100 |
+| 5000 |    5100 |
+| 1500 |    1600 |
+| 1100 |    1200 |
+| 2000 |    2100 |
+| 1000 |    1100 |
+|  950 |    1050 |
+| 3000 |    3100 |
+| 4150 |    4250 |
+| 2575 |    2675 |
+| 1300 |    1400 |
+| 1350 |    1450 |
+| 1250 |    1350 |
+| 1750 |    1850 |
+| 1750 |    1850 |
+| 1750 |    1850 |
++------+---------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT SAL,ENAME AS"NAME" ,SAL+100 AS"NEW SAL"FROM EMP;
++------+----------+---------+
+| SAL  | NAME     | NEW SAL |
++------+----------+---------+
+| 1750 | GITA     |    1850 |
+| 1750 | VRUSHALI |    1850 |
+| 1750 | SHARMIN  |    1850 |
+| 1750 | BANDISH  |    1850 |
+|  800 | SMITH    |     900 |
+| 3350 | AARAV    |    3450 |
+| 1750 | THOMAS   |    1850 |
+| 1600 | ALLEN    |    1700 |
+| 1250 | WARD     |    1350 |
+| 2975 | JONES    |    3075 |
+| 1250 | MARTIN   |    1350 |
+| 2850 | BLAKE    |    2950 |
+| 2450 | CLARK    |    2550 |
+| 3000 | SCOTT    |    3100 |
+| 5000 | KING     |    5100 |
+| 5000 | FRED     |    5100 |
+| 1500 | TURNER   |    1600 |
+| 1100 | ADAMS    |    1200 |
+| 2000 | Ruhan    |    2100 |
+| 1000 | Neel     |    1100 |
+|  950 | JAMES    |    1050 |
+| 3000 | FORD     |    3100 |
+| 4150 | HOFFMAN  |    4250 |
+| 2575 | GRASS    |    2675 |
+| 1300 | MILLER   |    1400 |
+| 1350 | AARUSH   |    1450 |
+| 1250 | ALEX     |    1350 |
+| 1750 | NATASHA  |    1850 |
+| 1750 | SANGITA  |    1850 |
+| 1750 | SUPRIYA  |    1850 |
++------+----------+---------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DATABASE();
++------------+
+| DATABASE() |
++------------+
+| d1         |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM DEPT;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     60 | IT         | BARODA   | BRD@1122   | 02/10/1989 |
++--------+------------+----------+------------+------------+
+6 rows in set (0.01 sec)
+
+mysql> TABLE DEPT;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     60 | IT         | BARODA   | BRD@1122   | 02/10/1989 |
++--------+------------+----------+------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM D1.DEPT;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     60 | IT         | BARODA   | BRD@1122   | 02/10/1989 |
++--------+------------+----------+------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT IFNULL(1000,'NO DATA');
++------------------------+
+| IFNULL(1000,'NO DATA') |
++------------------------+
+| 1000                   |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT IFNULL(100,'NO DATA');
++-----------------------+
+| IFNULL(100,'NO DATA') |
++-----------------------+
+| 100                   |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT IFNULL(NULL,'NO DATA');
++------------------------+
+| IFNULL(NULL,'NO DATA') |
++------------------------+
+| NO DATA                |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COMM FROM EMP;
++------+
+| COMM |
++------+
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+|  300 |
+|  500 |
+| NULL |
+| 1400 |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+|    0 |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| 2700 |
+| 1300 |
+| 2700 |
+|  500 |
+| NULL |
+| NULL |
+| NULL |
++------+
+30 rows in set (0.00 sec)
+
