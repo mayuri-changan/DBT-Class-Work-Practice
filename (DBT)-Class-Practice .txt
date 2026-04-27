@@ -1202,3 +1202,847 @@ mysql> SELECT COMM FROM EMP;
 +------+
 30 rows in set (0.00 sec)
 
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| d1                 |
+| d2                 |
+| db3                |
+| employeee          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.05 sec)
+
+mysql> use d1;
+Database changed
+mysql> table emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.01 sec)
+       desc x;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | date | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.03 sec)
+
+mysql> table x;
+Empty set (0.01 sec)
+
+mysql> TABLE X;
+Empty set (0.00 sec)
+
+mysql> USE DB3;
+Database changed
+mysql> TABLE X;
++------+-------+------------+------+------+------+------+------------+
+| ID   | ename | BLOODGROUP | city | C4   | C5   | C6   | PWD        |
++------+-------+------------+------+------+------+------+------------+
+| 1    | 1     | 1          | 1    |    1 |    1 |    1 | NULL       |
+| 1    | 1     | 1          | 1    |    1 |    1 |    1 | NULL       |
+| 2    | 2     | 2          | 2    |    2 |    2 |    2 | NULL       |
++------+-------+------------+------+------+------+------+------------+
+3 rows in set (0.01 sec)
+
+mysql> SELECT ID FROM X WHERE 1 ="MAYURI";
+Empty set, 1 warning (0.01 sec)
+
+mysql> SELECT * FROM X;
++------+-------+------------+------+------+------+------+------------+
+| ID   | ename | BLOODGROUP | city | C4   | C5   | C6   | PWD        |
++------+-------+------------+------+------+------+------+------------+
+| 1    | 1     | 1          | 1    |    1 |    1 |    1 | NULL       |
+| 1    | 1     | 1          | 1    |    1 |    1 |    1 | NULL       |
+| 2    | 2     | 2          | 2    |    2 |    2 |    2 | NULL       |
++------+-------+------------+------+------+------+------+------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT 100/NULL;
++----------+
+| 100/NULL |
++----------+
+|     NULL |
++----------+
+1 row in set (0.00 sec)
+
+mysql> use d1;
+Database changed
+mysql> SELECT ENAME,SAL,IF(SAL>=3000,'GOOD','BAD')FROM EMP;
++----------+------+----------------------------+
+| ENAME    | SAL  | IF(SAL>=3000,'GOOD','BAD') |
++----------+------+----------------------------+
+| GITA     | 1750 | BAD                        |
+| VRUSHALI | 1750 | BAD                        |
+| SHARMIN  | 1750 | BAD                        |
+| BANDISH  | 1750 | BAD                        |
+| SMITH    |  800 | BAD                        |
+| AARAV    | 3350 | GOOD                       |
+| THOMAS   | 1750 | BAD                        |
+| ALLEN    | 1600 | BAD                        |
+| WARD     | 1250 | BAD                        |
+| JONES    | 2975 | BAD                        |
+| MARTIN   | 1250 | BAD                        |
+| BLAKE    | 2850 | BAD                        |
+| CLARK    | 2450 | BAD                        |
+| SCOTT    | 3000 | GOOD                       |
+| KING     | 5000 | GOOD                       |
+| FRED     | 5000 | GOOD                       |
+| TURNER   | 1500 | BAD                        |
+| ADAMS    | 1100 | BAD                        |
+| Ruhan    | 2000 | BAD                        |
+| Neel     | 1000 | BAD                        |
+| JAMES    |  950 | BAD                        |
+| FORD     | 3000 | GOOD                       |
+| HOFFMAN  | 4150 | GOOD                       |
+| GRASS    | 2575 | BAD                        |
+| MILLER   | 1300 | BAD                        |
+| AARUSH   | 1350 | BAD                        |
+| ALEX     | 1250 | BAD                        |
+| NATASHA  | 1750 | BAD                        |
+| SANGITA  | 1750 | BAD                        |
+| SUPRIYA  | 1750 | BAD                        |
++----------+------+----------------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT ENAME,SAL,IF(SAL>=3000,'GOOD','BAD')FROM EMP;
++----------+------+----------------------------+
+| ENAME    | SAL  | IF(SAL>=3000,'GOOD','BAD') |
++----------+------+----------------------------+
+| GITA     | 1750 | BAD                        |
+| VRUSHALI | 1750 | BAD                        |
+| SHARMIN  | 1750 | BAD                        |
+| BANDISH  | 1750 | BAD                        |
+| SMITH    |  800 | BAD                        |
+| AARAV    | 3350 | GOOD                       |
+| THOMAS   | 1750 | BAD                        |
+| ALLEN    | 1600 | BAD                        |
+| WARD     | 1250 | BAD                        |
+| JONES    | 2975 | BAD                        |
+| MARTIN   | 1250 | BAD                        |
+| BLAKE    | 2850 | BAD                        |
+| CLARK    | 2450 | BAD                        |
+| SCOTT    | 3000 | GOOD                       |
+| KING     | 5000 | GOOD                       |
+| FRED     | 5000 | GOOD                       |
+| TURNER   | 1500 | BAD                        |
+| ADAMS    | 1100 | BAD                        |
+| Ruhan    | 2000 | BAD                        |
+| Neel     | 1000 | BAD                        |
+| JAMES    |  950 | BAD                        |
+| FORD     | 3000 | GOOD                       |
+| HOFFMAN  | 4150 | GOOD                       |
+| GRASS    | 2575 | BAD                        |
+| MILLER   | 1300 | BAD                        |
+| AARUSH   | 1350 | BAD                        |
+| ALEX     | 1250 | BAD                        |
+| NATASHA  | 1750 | BAD                        |
+| SANGITA  | 1750 | BAD                        |
+| SUPRIYA  | 1750 | BAD                        |
++----------+------+----------------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT ENAME ,SAL, IF(SAL>=2000,'GOOD','BAD') FROM EMP;
++----------+------+----------------------------+
+| ENAME    | SAL  | IF(SAL>=2000,'GOOD','BAD') |
++----------+------+----------------------------+
+| GITA     | 1750 | BAD                        |
+| VRUSHALI | 1750 | BAD                        |
+| SHARMIN  | 1750 | BAD                        |
+| BANDISH  | 1750 | BAD                        |
+| SMITH    |  800 | BAD                        |
+| AARAV    | 3350 | GOOD                       |
+| THOMAS   | 1750 | BAD                        |
+| ALLEN    | 1600 | BAD                        |
+| WARD     | 1250 | BAD                        |
+| JONES    | 2975 | GOOD                       |
+| MARTIN   | 1250 | BAD                        |
+| BLAKE    | 2850 | GOOD                       |
+| CLARK    | 2450 | GOOD                       |
+| SCOTT    | 3000 | GOOD                       |
+| KING     | 5000 | GOOD                       |
+| FRED     | 5000 | GOOD                       |
+| TURNER   | 1500 | BAD                        |
+| ADAMS    | 1100 | BAD                        |
+| Ruhan    | 2000 | GOOD                       |
+| Neel     | 1000 | BAD                        |
+| JAMES    |  950 | BAD                        |
+| FORD     | 3000 | GOOD                       |
+| HOFFMAN  | 4150 | GOOD                       |
+| GRASS    | 2575 | GOOD                       |
+| MILLER   | 1300 | BAD                        |
+| AARUSH   | 1350 | BAD                        |
+| ALEX     | 1250 | BAD                        |
+| NATASHA  | 1750 | BAD                        |
+| SANGITA  | 1750 | BAD                        |
+| SUPRIYA  | 1750 | BAD                        |
++----------+------+----------------------------+
+30 rows in set (0.00 sec)
+
+mysql> SHOW VARIABLES LIKE'AUTO%';
++--------------------------+-------+
+| Variable_name            | Value |
++--------------------------+-------+
+| auto_generate_certs      | ON    |
+| auto_increment_increment | 1     |
+| auto_increment_offset    | 1     |
+| autocommit               | ON    |
+| automatic_sp_privileges  | ON    |
++--------------------------+-------+
+5 rows in set (0.04 sec)
+
+mysql> SELECT COMM,DEPTNO FROM EMP;
++------+--------+
+| COMM | DEPTNO |
++------+--------+
+| NULL |     30 |
+| NULL |     50 |
+| NULL |     20 |
+| NULL |     20 |
+| NULL |     20 |
+| NULL |     10 |
+| NULL |     10 |
+|  300 |     30 |
+|  500 |     30 |
+| NULL |     20 |
+| 1400 |     30 |
+| NULL |     30 |
+| NULL |     10 |
+| NULL |     20 |
+| NULL |     10 |
+| NULL |     20 |
+|    0 |     30 |
+| NULL |     20 |
+| NULL |     60 |
+| NULL |     60 |
+| NULL |     30 |
+| NULL |     20 |
+| NULL |     30 |
+| 2700 |     30 |
+| 1300 |     10 |
+| 2700 |     30 |
+|  500 |     30 |
+| NULL |     30 |
+| NULL |     50 |
+| NULL |     50 |
++------+--------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO ,COMM,IF(DEPTNO=10,'A','X')FROM EMP;
++--------+------+-----------------------+
+| DEPTNO | COMM | IF(DEPTNO=10,'A','X') |
++--------+------+-----------------------+
+|     30 | NULL | X                     |
+|     50 | NULL | X                     |
+|     20 | NULL | X                     |
+|     20 | NULL | X                     |
+|     20 | NULL | X                     |
+|     10 | NULL | A                     |
+|     10 | NULL | A                     |
+|     30 |  300 | X                     |
+|     30 |  500 | X                     |
+|     20 | NULL | X                     |
+|     30 | 1400 | X                     |
+|     30 | NULL | X                     |
+|     10 | NULL | A                     |
+|     20 | NULL | X                     |
+|     10 | NULL | A                     |
+|     20 | NULL | X                     |
+|     30 |    0 | X                     |
+|     20 | NULL | X                     |
+|     60 | NULL | X                     |
+|     60 | NULL | X                     |
+|     30 | NULL | X                     |
+|     20 | NULL | X                     |
+|     30 | NULL | X                     |
+|     30 | 2700 | X                     |
+|     10 | 1300 | A                     |
+|     30 | 2700 | X                     |
+|     30 |  500 | X                     |
+|     30 | NULL | X                     |
+|     50 | NULL | X                     |
+|     50 | NULL | X                     |
++--------+------+-----------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO ,COMM,IF(DEPTNO=10,'A','X')R1 FROM EMP;
++--------+------+----+
+| DEPTNO | COMM | R1 |
++--------+------+----+
+|     30 | NULL | X  |
+|     50 | NULL | X  |
+|     20 | NULL | X  |
+|     20 | NULL | X  |
+|     20 | NULL | X  |
+|     10 | NULL | A  |
+|     10 | NULL | A  |
+|     30 |  300 | X  |
+|     30 |  500 | X  |
+|     20 | NULL | X  |
+|     30 | 1400 | X  |
+|     30 | NULL | X  |
+|     10 | NULL | A  |
+|     20 | NULL | X  |
+|     10 | NULL | A  |
+|     20 | NULL | X  |
+|     30 |    0 | X  |
+|     20 | NULL | X  |
+|     60 | NULL | X  |
+|     60 | NULL | X  |
+|     30 | NULL | X  |
+|     20 | NULL | X  |
+|     30 | NULL | X  |
+|     30 | 2700 | X  |
+|     10 | 1300 | A  |
+|     30 | 2700 | X  |
+|     30 |  500 | X  |
+|     30 | NULL | X  |
+|     50 | NULL | X  |
+|     50 | NULL | X  |
++--------+------+----+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO ,COMM,IF(DEPTNO=10,'A',IF(DEPTNO=20,'B','X'))R1 FROM EMP;
++--------+------+----+
+| DEPTNO | COMM | R1 |
++--------+------+----+
+|     30 | NULL | X  |
+|     50 | NULL | X  |
+|     20 | NULL | B  |
+|     20 | NULL | B  |
+|     20 | NULL | B  |
+|     10 | NULL | A  |
+|     10 | NULL | A  |
+|     30 |  300 | X  |
+|     30 |  500 | X  |
+|     20 | NULL | B  |
+|     30 | 1400 | X  |
+|     30 | NULL | X  |
+|     10 | NULL | A  |
+|     20 | NULL | B  |
+|     10 | NULL | A  |
+|     20 | NULL | B  |
+|     30 |    0 | X  |
+|     20 | NULL | B  |
+|     60 | NULL | X  |
+|     60 | NULL | X  |
+|     30 | NULL | X  |
+|     20 | NULL | B  |
+|     30 | NULL | X  |
+|     30 | 2700 | X  |
+|     10 | 1300 | A  |
+|     30 | 2700 | X  |
+|     30 |  500 | X  |
+|     30 | NULL | X  |
+|     50 | NULL | X  |
+|     50 | NULL | X  |
++--------+------+----+
+30 rows in set (0.00 sec)
+
+mysql> SELECT NULLIF(103,10);
++----------------+
+| NULLIF(103,10) |
++----------------+
+|            103 |
++----------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT NULLIF(103,10) as"data";
++------+
+| data |
++------+
+|  103 |
++------+
+1 row in set (0.00 sec)
+
+mysql> select * FROM STUDENT;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1017 | sanchali |    1 | NULL                   | sanchaliJ@gmail.com    |
++-----------+----------+------+------------------------+------------------------+
+13 rows in set (0.04 sec)
+
+mysql> TABLE STUDENT;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1017 | sanchali |    1 | NULL                   | sanchaliJ@gmail.com    |
++-----------+----------+------+------------------------+------------------------+
+13 rows in set (0.00 sec)
+
+mysql> USE D1;
+Database changed
+mysql> select * FROM STUDENT;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1017 | sanchali |    1 | NULL                   | sanchaliJ@gmail.com    |
++-----------+----------+------+------------------------+------------------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT RNK FROM STUDENT;
++------+
+| RNK  |
++------+
+|    1 |
+|    1 |
+|    2 |
+|    3 |
+|    2 |
+|    1 |
+|    4 |
+|    5 |
+|    4 |
+|    5 |
+|    3 |
+|    2 |
+|    1 |
++------+
+13 rows in set (0.00 sec)
+
+mysql> select rnk, name, if(rnk=1 and rnk=2, 'Baroda', if(rnk=3 and rnk = 4, 'Surat', 'Pune')) Location from student;
++------+----------+----------+
+| rnk  | name     | Location |
++------+----------+----------+
+|    1 | Saleel   | Pune     |
+|    1 | Sharmin  | Pune     |
+|    2 | Vrushali | Pune     |
+|    3 | Ruhan    | Pune     |
+|    2 | Neel     | Pune     |
+|    1 | Deep     | Pune     |
+|    4 | Nitish   | Pune     |
+|    5 | Gau      | Pune     |
+|    4 | Mai      | Pune     |
+|    5 | Bipin    | Pune     |
+|    3 | Natasha  | Pune     |
+|    2 | Bandish  | Pune     |
+|    1 | sanchali | Pune     |
++------+----------+----------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT RNK,NAME, IF(RNK=1 AND RNK=2,'PUNE',IF(RNK=3 AND RNK=4,'MUMABI','SOLAPUR'))LOCATION FROM STUDENT;
++------+----------+----------+
+| RNK  | NAME     | LOCATION |
++------+----------+----------+
+|    1 | Saleel   | SOLAPUR  |
+|    1 | Sharmin  | SOLAPUR  |
+|    2 | Vrushali | SOLAPUR  |
+|    3 | Ruhan    | SOLAPUR  |
+|    2 | Neel     | SOLAPUR  |
+|    1 | Deep     | SOLAPUR  |
+|    4 | Nitish   | SOLAPUR  |
+|    5 | Gau      | SOLAPUR  |
+|    4 | Mai      | SOLAPUR  |
+|    5 | Bipin    | SOLAPUR  |
+|    3 | Natasha  | SOLAPUR  |
+|    2 | Bandish  | SOLAPUR  |
+|    1 | sanchali | SOLAPUR  |
++------+----------+----------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT RNK,NAME, IF(RNK=1 OR RNK=2,'PUNE',IF(RNK=3 OR RNK=4,'MUMABI','SOLAPUR'))LOCATION FROM STUDENT;
++------+----------+----------+
+| RNK  | NAME     | LOCATION |
++------+----------+----------+
+|    1 | Saleel   | PUNE     |
+|    1 | Sharmin  | PUNE     |
+|    2 | Vrushali | PUNE     |
+|    3 | Ruhan    | MUMABI   |
+|    2 | Neel     | PUNE     |
+|    1 | Deep     | PUNE     |
+|    4 | Nitish   | MUMABI   |
+|    5 | Gau      | SOLAPUR  |
+|    4 | Mai      | MUMABI   |
+|    5 | Bipin    | SOLAPUR  |
+|    3 | Natasha  | MUMABI   |
+|    2 | Bandish  | PUNE     |
+|    1 | sanchali | PUNE     |
++------+----------+----------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1017 | sanchali |    1 | NULL                   | sanchaliJ@gmail.com    |
++-----------+----------+------+------------------------+------------------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT RNK,NAME,EMAILID,IF(EMAILID=USERNAME,'SAME DATA','NOT SAME DATA') FROM STUDENT;
++------+----------+------------------------+--------------------------------------------------+
+| RNK  | NAME     | EMAILID                | IF(EMAILID=USERNAME,'SAME DATA','NOT SAME DATA') |
++------+----------+------------------------+--------------------------------------------------+
+|    1 | Saleel   | saleel.songs@gmail.com | SAME DATA                                        |
+|    1 | Sharmin  | sharmin@gmail.com      | SAME DATA                                        |
+|    2 | Vrushali | vrusha@hotmail.com     | NOT SAME DATA                                    |
+|    3 | Ruhan    | ru@live.com            | NOT SAME DATA                                    |
+|    2 | Neel     | nil@gmail.com          | NOT SAME DATA                                    |
+|    1 | Deep     | deep@gmail.com         | SAME DATA                                        |
+|    4 | Nitish   | nity@live.com          | NOT SAME DATA                                    |
+|    5 | Gau      | gaurav@gmail.com       | NOT SAME DATA                                    |
+|    4 | Mai      | mai@gmail.com          | SAME DATA                                        |
+|    5 | Bipin    | bipin@gmail.com        | NOT SAME DATA                                    |
+|    3 | Natasha  | NULL                   | NOT SAME DATA                                    |
+|    2 | Bandish  | NULL                   | NOT SAME DATA                                    |
+|    1 | sanchali | NULL                   | NOT SAME DATA                                    |
++------+----------+------------------------+--------------------------------------------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT RNK,NAME,EMAILID,IF(EMAILID=USERNAME,'SAME DATA','NOT SAME DATA')AS"SAME OR NOT" FROM STUDENT;
++------+----------+------------------------+---------------+
+| RNK  | NAME     | EMAILID                | SAME OR NOT   |
++------+----------+------------------------+---------------+
+|    1 | Saleel   | saleel.songs@gmail.com | SAME DATA     |
+|    1 | Sharmin  | sharmin@gmail.com      | SAME DATA     |
+|    2 | Vrushali | vrusha@hotmail.com     | NOT SAME DATA |
+|    3 | Ruhan    | ru@live.com            | NOT SAME DATA |
+|    2 | Neel     | nil@gmail.com          | NOT SAME DATA |
+|    1 | Deep     | deep@gmail.com         | SAME DATA     |
+|    4 | Nitish   | nity@live.com          | NOT SAME DATA |
+|    5 | Gau      | gaurav@gmail.com       | NOT SAME DATA |
+|    4 | Mai      | mai@gmail.com          | SAME DATA     |
+|    5 | Bipin    | bipin@gmail.com        | NOT SAME DATA |
+|    3 | Natasha  | NULL                   | NOT SAME DATA |
+|    2 | Bandish  | NULL                   | NOT SAME DATA |
+|    1 | sanchali | NULL                   | NOT SAME DATA |
++------+----------+------------------------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT  COMM FROM EMP;
++------+
+| COMM |
++------+
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+|  300 |
+|  500 |
+| NULL |
+| 1400 |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+|    0 |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| 2700 |
+| 1300 |
+| 2700 |
+|  500 |
+| NULL |
+| NULL |
+| NULL |
++------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT COMM,IFNULL(COMM,'****')AS "R1"FROM EMP;
++------+------+
+| COMM | R1   |
++------+------+
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+|  300 | 300  |
+|  500 | 500  |
+| NULL | **** |
+| 1400 | 1400 |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+|    0 | 0    |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| 2700 | 2700 |
+| 1300 | 1300 |
+| 2700 | 2700 |
+|  500 | 500  |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
++------+------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT COMM ,ISNULL(COMM) R2 FROM EMP;
++------+----+
+| COMM | R2 |
++------+----+
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+|  300 |  0 |
+|  500 |  0 |
+| NULL |  1 |
+| 1400 |  0 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+|    0 |  0 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| 2700 |  0 |
+| 1300 |  0 |
+| 2700 |  0 |
+|  500 |  0 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
++------+----+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO,CASE WHEN DEPTNO=10 THEN'A'WHEN DEPTNO=20 THEN 'B'ELSE 'X' END R1 FROM EMP;
++--------+----+
+| DEPTNO | R1 |
++--------+----+
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     50 | X  |
+|     50 | X  |
+|     50 | X  |
+|     60 | X  |
+|     60 | X  |
++--------+----+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO, CASE WHEN DEPTNO=10 THEN 'A'WHEN DEPTNO=20 THEN 'B' ELSE 'X' END R1 FROM EMP;
++--------+----+
+| DEPTNO | R1 |
++--------+----+
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     50 | X  |
+|     50 | X  |
+|     50 | X  |
+|     60 | X  |
+|     60 | X  |
++--------+----+
+30 rows in set (0.00 sec)
+
+mysql> SELECT NOW();
++---------------------+
+| NOW()               |
++---------------------+
+| 2026-04-27 12:46:38 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT NOW(),CURDATE(),CURTIME();
++---------------------+------------+-----------+
+| NOW()               | CURDATE()  | CURTIME() |
++---------------------+------------+-----------+
+| 2026-04-27 12:48:13 | 2026-04-27 | 12:48:13  |
++---------------------+------------+-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT NOW(),NOW()+INTERVAL 5 DAY R1;
++---------------------+---------------------+
+| NOW()               | R1                  |
++---------------------+---------------------+
+| 2026-04-27 12:49:21 | 2026-05-02 12:49:21 |
++---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT NOW(),NOW()-INTERVAL 3 DAY R1;
++---------------------+---------------------+
+| NOW()               | R1                  |
++---------------------+---------------------+
+| 2026-04-27 12:50:29 | 2026-04-24 12:50:29 |
++---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT NOW(),NOW()-INTERVAL 1 HOUR R3;
++---------------------+---------------------+
+| NOW()               | R3                  |
++---------------------+---------------------+
+| 2026-04-27 12:52:14 | 2026-04-27 11:52:14 |
++---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT NOW(),NOW()-INTERVAL 1 HOUR AS"R3";
++---------------------+---------------------+
+| NOW()               | R3                  |
++---------------------+---------------------+
+| 2026-04-27 12:52:23 | 2026-04-27 11:52:23 |
++---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT NOW(),NOW()+INTERVAL '1 2'DAY_HOUR R1;
++---------------------+---------------------+
+| NOW()               | R1                  |
++---------------------+---------------------+
+| 2026-04-27 12:53:34 | 2026-04-28 14:53:34 |
++---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT NOW(),NOW()-INTERVAL '1 2'DAY_HOUR AS"R1";
++---------------------+---------------------+
+| NOW()               | R1                  |
++---------------------+---------------------+
+| 2026-04-27 12:54:30 | 2026-04-26 10:54:30 |
++---------------------+---------------------+
+1 row in set (0.00 sec)
+
+
+
