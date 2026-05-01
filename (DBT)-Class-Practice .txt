@@ -2497,5 +2497,330 @@ mysql> select * FROM STUDENT;
 +-----------+----------+------+------------------------+------------------------+
 13 rows in set (0.00 sec)
 
+mysql> SELECT RNK FROM STUDENT;
++------+
+| RNK  |
++------+
+|    1 |
+|    1 |
+|    2 |
+|    3 |
+|    2 |
+|    1 |
+|    4 |
+|    5 |
+|    4 |
+|    5 |
+|    3 |
+|    2 |
+|    1 |
++------+
+13 rows in set (0.00 sec)
+
+mysql> select rnk, name, if(rnk=1 and rnk=2, 'Baroda', if(rnk=3 and rnk = 4, 'Surat', 'Pune')) Location from student;
++------+----------+----------+
+| rnk  | name     | Location |
++------+----------+----------+
+|    1 | Saleel   | Pune     |
+|    1 | Sharmin  | Pune     |
+|    2 | Vrushali | Pune     |
+|    3 | Ruhan    | Pune     |
+|    2 | Neel     | Pune     |
+|    1 | Deep     | Pune     |
+|    4 | Nitish   | Pune     |
+|    5 | Gau      | Pune     |
+|    4 | Mai      | Pune     |
+|    5 | Bipin    | Pune     |
+|    3 | Natasha  | Pune     |
+|    2 | Bandish  | Pune     |
+|    1 | sanchali | Pune     |
++------+----------+----------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT RNK,NAME, IF(RNK=1 AND RNK=2,'PUNE',IF(RNK=3 AND RNK=4,'MUMABI','SOLAPUR'))LOCATION FROM STUDENT;
++------+----------+----------+
+| RNK  | NAME     | LOCATION |
++------+----------+----------+
+|    1 | Saleel   | SOLAPUR  |
+|    1 | Sharmin  | SOLAPUR  |
+|    2 | Vrushali | SOLAPUR  |
+|    3 | Ruhan    | SOLAPUR  |
+|    2 | Neel     | SOLAPUR  |
+|    1 | Deep     | SOLAPUR  |
+|    4 | Nitish   | SOLAPUR  |
+|    5 | Gau      | SOLAPUR  |
+|    4 | Mai      | SOLAPUR  |
+|    5 | Bipin    | SOLAPUR  |
+|    3 | Natasha  | SOLAPUR  |
+|    2 | Bandish  | SOLAPUR  |
+|    1 | sanchali | SOLAPUR  |
++------+----------+----------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT RNK,NAME, IF(RNK=1 OR RNK=2,'PUNE',IF(RNK=3 OR RNK=4,'MUMABI','SOLAPUR'))LOCATION FROM STUDENT;
++------+----------+----------+
+| RNK  | NAME     | LOCATION |
++------+----------+----------+
+|    1 | Saleel   | PUNE     |
+|    1 | Sharmin  | PUNE     |
+|    2 | Vrushali | PUNE     |
+|    3 | Ruhan    | MUMABI   |
+|    2 | Neel     | PUNE     |
+|    1 | Deep     | PUNE     |
+|    4 | Nitish   | MUMABI   |
+|    5 | Gau      | SOLAPUR  |
+|    4 | Mai      | MUMABI   |
+|    5 | Bipin    | SOLAPUR  |
+|    3 | Natasha  | MUMABI   |
+|    2 | Bandish  | PUNE     |
+|    1 | sanchali | PUNE     |
++------+----------+----------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1017 | sanchali |    1 | NULL                   | sanchaliJ@gmail.com    |
++-----------+----------+------+------------------------+------------------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT RNK,NAME,EMAILID,IF(EMAILID=USERNAME,'SAME DATA','NOT SAME DATA') FROM STUDENT;
++------+----------+------------------------+--------------------------------------------------+
+| RNK  | NAME     | EMAILID                | IF(EMAILID=USERNAME,'SAME DATA','NOT SAME DATA') |
++------+----------+------------------------+--------------------------------------------------+
+|    1 | Saleel   | saleel.songs@gmail.com | SAME DATA                                        |
+|    1 | Sharmin  | sharmin@gmail.com      | SAME DATA                                        |
+|    2 | Vrushali | vrusha@hotmail.com     | NOT SAME DATA                                    |
+|    3 | Ruhan    | ru@live.com            | NOT SAME DATA                                    |
+|    2 | Neel     | nil@gmail.com          | NOT SAME DATA                                    |
+|    1 | Deep     | deep@gmail.com         | SAME DATA                                        |
+|    4 | Nitish   | nity@live.com          | NOT SAME DATA                                    |
+|    5 | Gau      | gaurav@gmail.com       | NOT SAME DATA                                    |
+|    4 | Mai      | mai@gmail.com          | SAME DATA                                        |
+|    5 | Bipin    | bipin@gmail.com        | NOT SAME DATA                                    |
+|    3 | Natasha  | NULL                   | NOT SAME DATA                                    |
+|    2 | Bandish  | NULL                   | NOT SAME DATA                                    |
+|    1 | sanchali | NULL                   | NOT SAME DATA                                    |
++------+----------+------------------------+--------------------------------------------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT RNK,NAME,EMAILID,IF(EMAILID=USERNAME,'SAME DATA','NOT SAME DATA')AS"SAME OR NOT" FROM STUDENT;
++------+----------+------------------------+---------------+
+| RNK  | NAME     | EMAILID                | SAME OR NOT   |
++------+----------+------------------------+---------------+
+|    1 | Saleel   | saleel.songs@gmail.com | SAME DATA     |
+|    1 | Sharmin  | sharmin@gmail.com      | SAME DATA     |
+|    2 | Vrushali | vrusha@hotmail.com     | NOT SAME DATA |
+|    3 | Ruhan    | ru@live.com            | NOT SAME DATA |
+|    2 | Neel     | nil@gmail.com          | NOT SAME DATA |
+|    1 | Deep     | deep@gmail.com         | SAME DATA     |
+|    4 | Nitish   | nity@live.com          | NOT SAME DATA |
+|    5 | Gau      | gaurav@gmail.com       | NOT SAME DATA |
+|    4 | Mai      | mai@gmail.com          | SAME DATA     |
+|    5 | Bipin    | bipin@gmail.com        | NOT SAME DATA |
+|    3 | Natasha  | NULL                   | NOT SAME DATA |
+|    2 | Bandish  | NULL                   | NOT SAME DATA |
+|    1 | sanchali | NULL                   | NOT SAME DATA |
++------+----------+------------------------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> SELECT  COMM FROM EMP;
++------+
+| COMM |
++------+
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+|  300 |
+|  500 |
+| NULL |
+| 1400 |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+|    0 |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| 2700 |
+| 1300 |
+| 2700 |
+|  500 |
+| NULL |
+| NULL |
+| NULL |
++------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT COMM,IFNULL(COMM,'****')AS "R1"FROM EMP;
++------+------+
+| COMM | R1   |
++------+------+
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+|  300 | 300  |
+|  500 | 500  |
+| NULL | **** |
+| 1400 | 1400 |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+|    0 | 0    |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
+| 2700 | 2700 |
+| 1300 | 1300 |
+| 2700 | 2700 |
+|  500 | 500  |
+| NULL | **** |
+| NULL | **** |
+| NULL | **** |
++------+------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT COMM ,ISNULL(COMM) R2 FROM EMP;
++------+----+
+| COMM | R2 |
++------+----+
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+|  300 |  0 |
+|  500 |  0 |
+| NULL |  1 |
+| 1400 |  0 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+|    0 |  0 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
+| 2700 |  0 |
+| 1300 |  0 |
+| 2700 |  0 |
+|  500 |  0 |
+| NULL |  1 |
+| NULL |  1 |
+| NULL |  1 |
++------+----+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO,CASE WHEN DEPTNO=10 THEN'A'WHEN DEPTNO=20 THEN 'B'ELSE 'X' END R1 FROM EMP;
++--------+----+
+| DEPTNO | R1 |
++--------+----+
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     50 | X  |
+|     50 | X  |
+|     50 | X  |
+|     60 | X  |
+|     60 | X  |
++--------+----+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO, CASE WHEN DEPTNO=10 THEN 'A'WHEN DEPTNO=20 THEN 'B' ELSE 'X' END R1 FROM EMP;
++--------+----+
+| DEPTNO | R1 |
++--------+----+
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     10 | A  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     20 | B  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     30 | X  |
+|     50 | X  |
+|     50 | X  |
+|     50 | X  |
+|     60 | X  |
+|     60 | X  |
++--------+----+
+30 rows in set (0.00 sec)
+
 
 
