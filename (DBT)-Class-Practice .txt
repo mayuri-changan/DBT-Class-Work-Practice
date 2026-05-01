@@ -2044,5 +2044,220 @@ mysql> SELECT NOW(),NOW()-INTERVAL '1 2'DAY_HOUR AS"R1";
 +---------------------+---------------------+
 1 row in set (0.00 sec)
 
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| d1                 |
+| d2                 |
+| db3                |
+| employeee          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.05 sec)
+
+mysql> use d1;
+Database changed
+mysql> table emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.01 sec)
+       desc x;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | date | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.03 sec)
+
+mysql> table x;
+Empty set (0.01 sec)
+
+mysql> TABLE X;
+Empty set (0.00 sec)
+
+mysql> USE DB3;
+Database changed
+mysql> TABLE X;
++------+-------+------------+------+------+------+------+------------+
+| ID   | ename | BLOODGROUP | city | C4   | C5   | C6   | PWD        |
++------+-------+------------+------+------+------+------+------------+
+| 1    | 1     | 1          | 1    |    1 |    1 |    1 | NULL       |
+| 1    | 1     | 1          | 1    |    1 |    1 |    1 | NULL       |
+| 2    | 2     | 2          | 2    |    2 |    2 |    2 | NULL       |
++------+-------+------------+------+------+------+------+------------+
+3 rows in set (0.01 sec)
+
+mysql> SELECT ID FROM X WHERE 1 ="MAYURI";
+Empty set, 1 warning (0.01 sec)
+
+mysql> SELECT * FROM X;
++------+-------+------------+------+------+------+------+------------+
+| ID   | ename | BLOODGROUP | city | C4   | C5   | C6   | PWD        |
++------+-------+------------+------+------+------+------+------------+
+| 1    | 1     | 1          | 1    |    1 |    1 |    1 | NULL       |
+| 1    | 1     | 1          | 1    |    1 |    1 |    1 | NULL       |
+| 2    | 2     | 2          | 2    |    2 |    2 |    2 | NULL       |
++------+-------+------------+------+------+------+------+------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT 100/NULL;
++----------+
+| 100/NULL |
++----------+
+|     NULL |
++----------+
+1 row in set (0.00 sec)
+
+mysql> use d1;
+Database changed
+mysql> SELECT ENAME,SAL,IF(SAL>=3000,'GOOD','BAD')FROM EMP;
++----------+------+----------------------------+
+| ENAME    | SAL  | IF(SAL>=3000,'GOOD','BAD') |
++----------+------+----------------------------+
+| GITA     | 1750 | BAD                        |
+| VRUSHALI | 1750 | BAD                        |
+| SHARMIN  | 1750 | BAD                        |
+| BANDISH  | 1750 | BAD                        |
+| SMITH    |  800 | BAD                        |
+| AARAV    | 3350 | GOOD                       |
+| THOMAS   | 1750 | BAD                        |
+| ALLEN    | 1600 | BAD                        |
+| WARD     | 1250 | BAD                        |
+| JONES    | 2975 | BAD                        |
+| MARTIN   | 1250 | BAD                        |
+| BLAKE    | 2850 | BAD                        |
+| CLARK    | 2450 | BAD                        |
+| SCOTT    | 3000 | GOOD                       |
+| KING     | 5000 | GOOD                       |
+| FRED     | 5000 | GOOD                       |
+| TURNER   | 1500 | BAD                        |
+| ADAMS    | 1100 | BAD                        |
+| Ruhan    | 2000 | BAD                        |
+| Neel     | 1000 | BAD                        |
+| JAMES    |  950 | BAD                        |
+| FORD     | 3000 | GOOD                       |
+| HOFFMAN  | 4150 | GOOD                       |
+| GRASS    | 2575 | BAD                        |
+| MILLER   | 1300 | BAD                        |
+| AARUSH   | 1350 | BAD                        |
+| ALEX     | 1250 | BAD                        |
+| NATASHA  | 1750 | BAD                        |
+| SANGITA  | 1750 | BAD                        |
+| SUPRIYA  | 1750 | BAD                        |
++----------+------+----------------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT ENAME,SAL,IF(SAL>=3000,'GOOD','BAD')FROM EMP;
++----------+------+----------------------------+
+| ENAME    | SAL  | IF(SAL>=3000,'GOOD','BAD') |
++----------+------+----------------------------+
+| GITA     | 1750 | BAD                        |
+| VRUSHALI | 1750 | BAD                        |
+| SHARMIN  | 1750 | BAD                        |
+| BANDISH  | 1750 | BAD                        |
+| SMITH    |  800 | BAD                        |
+| AARAV    | 3350 | GOOD                       |
+| THOMAS   | 1750 | BAD                        |
+| ALLEN    | 1600 | BAD                        |
+| WARD     | 1250 | BAD                        |
+| JONES    | 2975 | BAD                        |
+| MARTIN   | 1250 | BAD                        |
+| BLAKE    | 2850 | BAD                        |
+| CLARK    | 2450 | BAD                        |
+| SCOTT    | 3000 | GOOD                       |
+| KING     | 5000 | GOOD                       |
+| FRED     | 5000 | GOOD                       |
+| TURNER   | 1500 | BAD                        |
+| ADAMS    | 1100 | BAD                        |
+| Ruhan    | 2000 | BAD                        |
+| Neel     | 1000 | BAD                        |
+| JAMES    |  950 | BAD                        |
+| FORD     | 3000 | GOOD                       |
+| HOFFMAN  | 4150 | GOOD                       |
+| GRASS    | 2575 | BAD                        |
+| MILLER   | 1300 | BAD                        |
+| AARUSH   | 1350 | BAD                        |
+| ALEX     | 1250 | BAD                        |
+| NATASHA  | 1750 | BAD                        |
+| SANGITA  | 1750 | BAD                        |
+| SUPRIYA  | 1750 | BAD                        |
++----------+------+----------------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT ENAME ,SAL, IF(SAL>=2000,'GOOD','BAD') FROM EMP;
++----------+------+----------------------------+
+| ENAME    | SAL  | IF(SAL>=2000,'GOOD','BAD') |
++----------+------+----------------------------+
+| GITA     | 1750 | BAD                        |
+| VRUSHALI | 1750 | BAD                        |
+| SHARMIN  | 1750 | BAD                        |
+| BANDISH  | 1750 | BAD                        |
+| SMITH    |  800 | BAD                        |
+| AARAV    | 3350 | GOOD                       |
+| THOMAS   | 1750 | BAD                        |
+| ALLEN    | 1600 | BAD                        |
+| WARD     | 1250 | BAD                        |
+| JONES    | 2975 | GOOD                       |
+| MARTIN   | 1250 | BAD                        |
+| BLAKE    | 2850 | GOOD                       |
+| CLARK    | 2450 | GOOD                       |
+| SCOTT    | 3000 | GOOD                       |
+| KING     | 5000 | GOOD                       |
+| FRED     | 5000 | GOOD                       |
+| TURNER   | 1500 | BAD                        |
+| ADAMS    | 1100 | BAD                        |
+| Ruhan    | 2000 | GOOD                       |
+| Neel     | 1000 | BAD                        |
+| JAMES    |  950 | BAD                        |
+| FORD     | 3000 | GOOD                       |
+| HOFFMAN  | 4150 | GOOD                       |
+| GRASS    | 2575 | GOOD                       |
+| MILLER   | 1300 | BAD                        |
+| AARUSH   | 1350 | BAD                        |
+| ALEX     | 1250 | BAD                        |
+| NATASHA  | 1750 | BAD                        |
+| SANGITA  | 1750 | BAD                        |
+| SUPRIYA  | 1750 | BAD                        |
++----------+------+----------------------------+
+30 rows in set (0.00 sec)
+
 
 
