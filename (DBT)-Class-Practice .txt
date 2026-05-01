@@ -2259,5 +2259,243 @@ mysql> SELECT ENAME ,SAL, IF(SAL>=2000,'GOOD','BAD') FROM EMP;
 +----------+------+----------------------------+
 30 rows in set (0.00 sec)
 
+mysql> SHOW VARIABLES LIKE'AUTO%';
++--------------------------+-------+
+| Variable_name            | Value |
++--------------------------+-------+
+| auto_generate_certs      | ON    |
+| auto_increment_increment | 1     |
+| auto_increment_offset    | 1     |
+| autocommit               | ON    |
+| automatic_sp_privileges  | ON    |
++--------------------------+-------+
+5 rows in set (0.04 sec)
+
+mysql> SELECT COMM,DEPTNO FROM EMP;
++------+--------+
+| COMM | DEPTNO |
++------+--------+
+| NULL |     30 |
+| NULL |     50 |
+| NULL |     20 |
+| NULL |     20 |
+| NULL |     20 |
+| NULL |     10 |
+| NULL |     10 |
+|  300 |     30 |
+|  500 |     30 |
+| NULL |     20 |
+| 1400 |     30 |
+| NULL |     30 |
+| NULL |     10 |
+| NULL |     20 |
+| NULL |     10 |
+| NULL |     20 |
+|    0 |     30 |
+| NULL |     20 |
+| NULL |     60 |
+| NULL |     60 |
+| NULL |     30 |
+| NULL |     20 |
+| NULL |     30 |
+| 2700 |     30 |
+| 1300 |     10 |
+| 2700 |     30 |
+|  500 |     30 |
+| NULL |     30 |
+| NULL |     50 |
+| NULL |     50 |
++------+--------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO ,COMM,IF(DEPTNO=10,'A','X')FROM EMP;
++--------+------+-----------------------+
+| DEPTNO | COMM | IF(DEPTNO=10,'A','X') |
++--------+------+-----------------------+
+|     30 | NULL | X                     |
+|     50 | NULL | X                     |
+|     20 | NULL | X                     |
+|     20 | NULL | X                     |
+|     20 | NULL | X                     |
+|     10 | NULL | A                     |
+|     10 | NULL | A                     |
+|     30 |  300 | X                     |
+|     30 |  500 | X                     |
+|     20 | NULL | X                     |
+|     30 | 1400 | X                     |
+|     30 | NULL | X                     |
+|     10 | NULL | A                     |
+|     20 | NULL | X                     |
+|     10 | NULL | A                     |
+|     20 | NULL | X                     |
+|     30 |    0 | X                     |
+|     20 | NULL | X                     |
+|     60 | NULL | X                     |
+|     60 | NULL | X                     |
+|     30 | NULL | X                     |
+|     20 | NULL | X                     |
+|     30 | NULL | X                     |
+|     30 | 2700 | X                     |
+|     10 | 1300 | A                     |
+|     30 | 2700 | X                     |
+|     30 |  500 | X                     |
+|     30 | NULL | X                     |
+|     50 | NULL | X                     |
+|     50 | NULL | X                     |
++--------+------+-----------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO ,COMM,IF(DEPTNO=10,'A','X')R1 FROM EMP;
++--------+------+----+
+| DEPTNO | COMM | R1 |
++--------+------+----+
+|     30 | NULL | X  |
+|     50 | NULL | X  |
+|     20 | NULL | X  |
+|     20 | NULL | X  |
+|     20 | NULL | X  |
+|     10 | NULL | A  |
+|     10 | NULL | A  |
+|     30 |  300 | X  |
+|     30 |  500 | X  |
+|     20 | NULL | X  |
+|     30 | 1400 | X  |
+|     30 | NULL | X  |
+|     10 | NULL | A  |
+|     20 | NULL | X  |
+|     10 | NULL | A  |
+|     20 | NULL | X  |
+|     30 |    0 | X  |
+|     20 | NULL | X  |
+|     60 | NULL | X  |
+|     60 | NULL | X  |
+|     30 | NULL | X  |
+|     20 | NULL | X  |
+|     30 | NULL | X  |
+|     30 | 2700 | X  |
+|     10 | 1300 | A  |
+|     30 | 2700 | X  |
+|     30 |  500 | X  |
+|     30 | NULL | X  |
+|     50 | NULL | X  |
+|     50 | NULL | X  |
++--------+------+----+
+30 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO ,COMM,IF(DEPTNO=10,'A',IF(DEPTNO=20,'B','X'))R1 FROM EMP;
++--------+------+----+
+| DEPTNO | COMM | R1 |
++--------+------+----+
+|     30 | NULL | X  |
+|     50 | NULL | X  |
+|     20 | NULL | B  |
+|     20 | NULL | B  |
+|     20 | NULL | B  |
+|     10 | NULL | A  |
+|     10 | NULL | A  |
+|     30 |  300 | X  |
+|     30 |  500 | X  |
+|     20 | NULL | B  |
+|     30 | 1400 | X  |
+|     30 | NULL | X  |
+|     10 | NULL | A  |
+|     20 | NULL | B  |
+|     10 | NULL | A  |
+|     20 | NULL | B  |
+|     30 |    0 | X  |
+|     20 | NULL | B  |
+|     60 | NULL | X  |
+|     60 | NULL | X  |
+|     30 | NULL | X  |
+|     20 | NULL | B  |
+|     30 | NULL | X  |
+|     30 | 2700 | X  |
+|     10 | 1300 | A  |
+|     30 | 2700 | X  |
+|     30 |  500 | X  |
+|     30 | NULL | X  |
+|     50 | NULL | X  |
+|     50 | NULL | X  |
++--------+------+----+
+30 rows in set (0.00 sec)
+
+mysql> SELECT NULLIF(103,10);
++----------------+
+| NULLIF(103,10) |
++----------------+
+|            103 |
++----------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT NULLIF(103,10) as"data";
++------+
+| data |
++------+
+|  103 |
++------+
+1 row in set (0.00 sec)
+
+mysql> select * FROM STUDENT;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1017 | sanchali |    1 | NULL                   | sanchaliJ@gmail.com    |
++-----------+----------+------+------------------------+------------------------+
+13 rows in set (0.04 sec)
+
+mysql> TABLE STUDENT;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1017 | sanchali |    1 | NULL                   | sanchaliJ@gmail.com    |
++-----------+----------+------+------------------------+------------------------+
+13 rows in set (0.00 sec)
+
+mysql> USE D1;
+Database changed
+mysql> select * FROM STUDENT;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1017 | sanchali |    1 | NULL                   | sanchaliJ@gmail.com    |
++-----------+----------+------+------------------------+------------------------+
+13 rows in set (0.00 sec)
+
 
 
