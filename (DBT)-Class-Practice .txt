@@ -3245,3 +3245,838 @@ mysql> SELECT ENAME,HIREDATE,EXTRACT(QUARTER FROM HIREDATE) R1 FROM EMP WHERE EX
 +----------+------------+------+
 13 rows in set (0.00 sec)
 
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| d1                 |
+| d2                 |
+| db3                |
+| employeee          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.12 sec)
+
+mysql> use d1;
+Database changed
+mysql> table emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.01 sec)
+       ^C
+mysql> select ename, hiredate, extract(quarter from hiredate) R1 from emp where extract(quarter from hiredate) = 3 and extract(day from hiredate) = 9;
++-------+------------+------+
+| ename | hiredate   | R1   |
++-------+------------+------+
+| FRED  | 1983-08-09 |    3 |
+| Ruhan | 1983-08-09 |    3 |
+| Neel  | 1983-08-09 |    3 |
++-------+------------+------+
+3 rows in set (0.01 sec)
+
+mysql> SELECT DAY (NOW());
++-------------+
+| DAY (NOW()) |
++-------------+
+|          28 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT NOW();
++---------------------+
+| NOW()               |
++---------------------+
+| 2026-04-28 12:03:47 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DAY (NOW());
++-------------+
+| DAY (NOW()) |
++-------------+
+|          28 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CURDATE();
++------------+
+| CURDATE()  |
++------------+
+| 2026-04-28 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CURtIME();
++-----------+
+| CURtIME() |
++-----------+
+| 12:05:18  |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CURDATE()-INTERVAL 1 MONTH;
++----------------------------+
+| CURDATE()-INTERVAL 1 MONTH |
++----------------------------+
+| 2026-03-28                 |
++----------------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT CURTIME()+INTERVAL 1 HOUR;
++---------------------------+
+| CURTIME()+INTERVAL 1 HOUR |
++---------------------------+
+| 13:06:28                  |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> DESC DEPT;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| DEPTNO    | int         | NO   | PRI | NULL    |       |
+| DNAME     | varchar(12) | YES  |     | NULL    |       |
+| LOC       | varchar(10) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| STARTEDON | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.13 sec)
+
+mysql> SELECT * FROM DEPT;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     60 | IT         | BARODA   | BRD@1122   | 02/10/1989 |
++--------+------------+----------+------------+------------+
+6 rows in set (0.01 sec)
+
+ ysql> SELECT DNAME,STARTEDON,STR_TO_DATE(STARTEDON,'%D- %M -%Y') R1 FROM DEPT;
++------------+------------+------+
+| DNAME      | STARTEDON  | R1   |
++------------+------------+------+
+| ACCOUNTING | 24/03/1989 | NULL |
+| RESEARCH   | 12/04/1989 | NULL |
+| SALES      | 13/04/1989 | NULL |
+| OPERATIONS | 12/07/1989 | NULL |
+| HR         | 22/12/1989 | NULL |
+| IT         | 02/10/1989 | NULL |
++------------+------------+------+
+6 rows in set, 6 warnings (0.01 sec)
+
+mysql> SELECT DNAME,STARTEDON,STR_TO_DATE(STARTEDON,'%D/%M/%Y') R1 FROM DEPT;
++------------+------------+------+
+| DNAME      | STARTEDON  | R1   |
++------------+------------+------+
+| ACCOUNTING | 24/03/1989 | NULL |
+| RESEARCH   | 12/04/1989 | NULL |
+| SALES      | 13/04/1989 | NULL |
+| OPERATIONS | 12/07/1989 | NULL |
+| HR         | 22/12/1989 | NULL |
+| IT         | 02/10/1989 | NULL |
++------------+------------+------+
+6 rows in set, 6 warnings (0.00 sec)
+
+mysql> SELECT DNAME,STARTEDON,STR_TO_DATE(STARTEDON,'%d/%m/%Y') R1 FROM DEPT;
++------------+------------+------------+
+| DNAME      | STARTEDON  | R1         |
++------------+------------+------------+
+| ACCOUNTING | 24/03/1989 | 1989-03-24 |
+| RESEARCH   | 12/04/1989 | 1989-04-12 |
+| SALES      | 13/04/1989 | 1989-04-13 |
+| OPERATIONS | 12/07/1989 | 1989-07-12 |
+| HR         | 22/12/1989 | 1989-12-22 |
+| IT         | 02/10/1989 | 1989-10-02 |
++------------+------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select dname,startedon,str_to_date(startedon,'%d/%m/%Y')r1 from dept;
++------------+------------+------------+
+| dname      | startedon  | r1         |
++------------+------------+------------+
+| ACCOUNTING | 24/03/1989 | 1989-03-24 |
+| RESEARCH   | 12/04/1989 | 1989-04-12 |
+| SALES      | 13/04/1989 | 1989-04-13 |
+| OPERATIONS | 12/07/1989 | 1989-07-12 |
+| HR         | 22/12/1989 | 1989-12-22 |
+| IT         | 02/10/1989 | 1989-10-02 |
++------------+------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT MONTHNAME (NOW());
++-------------------+
+| MONTHNAME (NOW()) |
++-------------------+
+| April             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MONTHNAME (NOW())-INTERVAL 1 MONTH;
++------------------------------------+
+| MONTHNAME (NOW())-INTERVAL 1 MONTH |
++------------------------------------+
+| NULL                               |
++------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT MONTHNAME (NOW());
++-------------------+
+| MONTHNAME (NOW()) |
++-------------------+
+| April             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MONTHNAME (NOW()) ,DATE_FORMAT(NOW(),'%A');
++-------------------+-------------------------+
+| MONTHNAME (NOW()) | DATE_FORMAT(NOW(),'%A') |
++-------------------+-------------------------+
+| April             | A                       |
++-------------------+-------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MONTHNAME (NOW()) ,DATE_FORMAT(NOW(),'%a');
++-------------------+-------------------------+
+| MONTHNAME (NOW()) | DATE_FORMAT(NOW(),'%a') |
++-------------------+-------------------------+
+| April             | Tue                     |
++-------------------+-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select monthname (now()),date_format(now(),'%a');
++-------------------+-------------------------+
+| monthname (now()) | date_format(now(),'%a') |
++-------------------+-------------------------+
+| April             | Tue                     |
++-------------------+-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select monthname (now()),date_format(now(),'%a');
++-------------------+-------------------------+
+| monthname (now()) | date_format(now(),'%a') |
++-------------------+-------------------------+
+| April             | Tue                     |
++-------------------+-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select monthname(now()),date_format(now(),'%b');
++------------------+-------------------------+
+| monthname(now()) | date_format(now(),'%b') |
++------------------+-------------------------+
+| April            | Apr                     |
++------------------+-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select monthname(now()),date_format(now(),'%a-%b');
++------------------+----------------------------+
+| monthname(now()) | date_format(now(),'%a-%b') |
++------------------+----------------------------+
+| April            | Tue-Apr                    |
++------------------+----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select ename,date_format(hiredate,'%M')from emp;
++----------+----------------------------+
+| ename    | date_format(hiredate,'%M') |
++----------+----------------------------+
+| GITA     | July                       |
+| VRUSHALI | July                       |
+| SHARMIN  | July                       |
+| BANDISH  | July                       |
+| SMITH    | December                   |
+| AARAV    | December                   |
+| THOMAS   | July                       |
+| ALLEN    | February                   |
+| WARD     | February                   |
+| JONES    | April                      |
+| MARTIN   | September                  |
+| BLAKE    | May                        |
+| CLARK    | June                       |
+| SCOTT    | December                   |
+| KING     | November                   |
+| FRED     | August                     |
+| TURNER   | September                  |
+| ADAMS    | January                    |
+| Ruhan    | August                     |
+| Neel     | August                     |
+| JAMES    | December                   |
+| FORD     | December                   |
+| HOFFMAN  | March                      |
+| GRASS    | February                   |
+| MILLER   | January                    |
+| AARUSH   | February                   |
+| ALEX     | January                    |
+| NATASHA  | July                       |
+| SANGITA  | July                       |
+| SUPRIYA  | July                       |
++----------+----------------------------+
+30 rows in set (0.01 sec)
+
+mysql> select ename,date_format(hiredate,'hired in %M')from emp;
++----------+-------------------------------------+
+| ename    | date_format(hiredate,'hired in %M') |
++----------+-------------------------------------+
+| GITA     | hired in July                       |
+| VRUSHALI | hired in July                       |
+| SHARMIN  | hired in July                       |
+| BANDISH  | hired in July                       |
+| SMITH    | hired in December                   |
+| AARAV    | hired in December                   |
+| THOMAS   | hired in July                       |
+| ALLEN    | hired in February                   |
+| WARD     | hired in February                   |
+| JONES    | hired in April                      |
+| MARTIN   | hired in September                  |
+| BLAKE    | hired in May                        |
+| CLARK    | hired in June                       |
+| SCOTT    | hired in December                   |
+| KING     | hired in November                   |
+| FRED     | hired in August                     |
+| TURNER   | hired in September                  |
+| ADAMS    | hired in January                    |
+| Ruhan    | hired in August                     |
+| Neel     | hired in August                     |
+| JAMES    | hired in December                   |
+| FORD     | hired in December                   |
+| HOFFMAN  | hired in March                      |
+| GRASS    | hired in February                   |
+| MILLER   | hired in January                    |
+| AARUSH   | hired in February                   |
+| ALEX     | hired in January                    |
+| NATASHA  | hired in July                       |
+| SANGITA  | hired in July                       |
+| SUPRIYA  | hired in July                       |
++----------+-------------------------------------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,date_format(hiredate,'hired in %Y')from emp;
++----------+-------------------------------------+
+| ename    | date_format(hiredate,'hired in %Y') |
++----------+-------------------------------------+
+| GITA     | hired in 1981                       |
+| VRUSHALI | hired in 1981                       |
+| SHARMIN  | hired in 1981                       |
+| BANDISH  | hired in 1981                       |
+| SMITH    | hired in 1980                       |
+| AARAV    | hired in 1981                       |
+| THOMAS   | hired in 1981                       |
+| ALLEN    | hired in 1981                       |
+| WARD     | hired in 1981                       |
+| JONES    | hired in 1981                       |
+| MARTIN   | hired in 1981                       |
+| BLAKE    | hired in 1981                       |
+| CLARK    | hired in 1981                       |
+| SCOTT    | hired in 1982                       |
+| KING     | hired in 1981                       |
+| FRED     | hired in 1983                       |
+| TURNER   | hired in 1981                       |
+| ADAMS    | hired in 1983                       |
+| Ruhan    | hired in 1983                       |
+| Neel     | hired in 1983                       |
+| JAMES    | hired in 1981                       |
+| FORD     | hired in 1981                       |
+| HOFFMAN  | hired in 1982                       |
+| GRASS    | hired in 1980                       |
+| MILLER   | hired in 1982                       |
+| AARUSH   | hired in 1980                       |
+| ALEX     | hired in 1982                       |
+| NATASHA  | hired in 1981                       |
+| SANGITA  | hired in 1981                       |
+| SUPRIYA  | hired in 1981                       |
++----------+-------------------------------------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,date_format(hiredate,'hired in %D')from emp;
++----------+-------------------------------------+
+| ename    | date_format(hiredate,'hired in %D') |
++----------+-------------------------------------+
+| GITA     | hired in 19th                       |
+| VRUSHALI | hired in 19th                       |
+| SHARMIN  | hired in 19th                       |
+| BANDISH  | hired in 19th                       |
+| SMITH    | hired in 17th                       |
+| AARAV    | hired in 31st                       |
+| THOMAS   | hired in 19th                       |
+| ALLEN    | hired in 20th                       |
+| WARD     | hired in 22nd                       |
+| JONES    | hired in 2nd                        |
+| MARTIN   | hired in 28th                       |
+| BLAKE    | hired in 1st                        |
+| CLARK    | hired in 9th                        |
+| SCOTT    | hired in 9th                        |
+| KING     | hired in 17th                       |
+| FRED     | hired in 9th                        |
+| TURNER   | hired in 8th                        |
+| ADAMS    | hired in 12th                       |
+| Ruhan    | hired in 9th                        |
+| Neel     | hired in 9th                        |
+| JAMES    | hired in 3rd                        |
+| FORD     | hired in 3rd                        |
+| HOFFMAN  | hired in 24th                       |
+| GRASS    | hired in 14th                       |
+| MILLER   | hired in 23rd                       |
+| AARUSH   | hired in 14th                       |
+| ALEX     | hired in 24th                       |
+| NATASHA  | hired in 19th                       |
+| SANGITA  | hired in 19th                       |
+| SUPRIYA  | hired in 19th                       |
++----------+-------------------------------------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,date_format(hiredate,'hired in %D-%M-%Y')from emp;
++----------+-------------------------------------------+
+| ename    | date_format(hiredate,'hired in %D-%M-%Y') |
++----------+-------------------------------------------+
+| GITA     | hired in 19th-July-1981                   |
+| VRUSHALI | hired in 19th-July-1981                   |
+| SHARMIN  | hired in 19th-July-1981                   |
+| BANDISH  | hired in 19th-July-1981                   |
+| SMITH    | hired in 17th-December-1980               |
+| AARAV    | hired in 31st-December-1981               |
+| THOMAS   | hired in 19th-July-1981                   |
+| ALLEN    | hired in 20th-February-1981               |
+| WARD     | hired in 22nd-February-1981               |
+| JONES    | hired in 2nd-April-1981                   |
+| MARTIN   | hired in 28th-September-1981              |
+| BLAKE    | hired in 1st-May-1981                     |
+| CLARK    | hired in 9th-June-1981                    |
+| SCOTT    | hired in 9th-December-1982                |
+| KING     | hired in 17th-November-1981               |
+| FRED     | hired in 9th-August-1983                  |
+| TURNER   | hired in 8th-September-1981               |
+| ADAMS    | hired in 12th-January-1983                |
+| Ruhan    | hired in 9th-August-1983                  |
+| Neel     | hired in 9th-August-1983                  |
+| JAMES    | hired in 3rd-December-1981                |
+| FORD     | hired in 3rd-December-1981                |
+| HOFFMAN  | hired in 24th-March-1982                  |
+| GRASS    | hired in 14th-February-1980               |
+| MILLER   | hired in 23rd-January-1982                |
+| AARUSH   | hired in 14th-February-1980               |
+| ALEX     | hired in 24th-January-1982                |
+| NATASHA  | hired in 19th-July-1981                   |
+| SANGITA  | hired in 19th-July-1981                   |
+| SUPRIYA  | hired in 19th-July-1981                   |
++----------+-------------------------------------------+
+30 rows in set (0.00 sec)
+
+mysql> select CONCAT (ename,date_format(hiredate,'hired in %D-%M-%Y')) R1 from emp;
++------------------------------------+
+| R1                                 |
++------------------------------------+
+| GITAhired in 19th-July-1981        |
+| VRUSHALIhired in 19th-July-1981    |
+| SHARMINhired in 19th-July-1981     |
+| BANDISHhired in 19th-July-1981     |
+| SMITHhired in 17th-December-1980   |
+| AARAVhired in 31st-December-1981   |
+| THOMAShired in 19th-July-1981      |
+| ALLENhired in 20th-February-1981   |
+| WARDhired in 22nd-February-1981    |
+| JONEShired in 2nd-April-1981       |
+| MARTINhired in 28th-September-1981 |
+| BLAKEhired in 1st-May-1981         |
+| CLARKhired in 9th-June-1981        |
+| SCOTThired in 9th-December-1982    |
+| KINGhired in 17th-November-1981    |
+| FREDhired in 9th-August-1983       |
+| TURNERhired in 8th-September-1981  |
+| ADAMShired in 12th-January-1983    |
+| Ruhanhired in 9th-August-1983      |
+| Neelhired in 9th-August-1983       |
+| JAMEShired in 3rd-December-1981    |
+| FORDhired in 3rd-December-1981     |
+| HOFFMANhired in 24th-March-1982    |
+| GRASShired in 14th-February-1980   |
+| MILLERhired in 23rd-January-1982   |
+| AARUSHhired in 14th-February-1980  |
+| ALEXhired in 24th-January-1982     |
+| NATASHAhired in 19th-July-1981     |
+| SANGITAhired in 19th-July-1981     |
+| SUPRIYAhired in 19th-July-1981     |
++------------------------------------+
+30 rows in set (0.01 sec)
+
+mysql> select CONCAT (ename,date_format(hiredate,'hired in %D-%M-%Y')) R1 from emp;
++------------------------------------+
+| R1                                 |
++------------------------------------+
+| GITAhired in 19th-July-1981        |
+| VRUSHALIhired in 19th-July-1981    |
+| SHARMINhired in 19th-July-1981     |
+| BANDISHhired in 19th-July-1981     |
+| SMITHhired in 17th-December-1980   |
+| AARAVhired in 31st-December-1981   |
+| THOMAShired in 19th-July-1981      |
+| ALLENhired in 20th-February-1981   |
+| WARDhired in 22nd-February-1981    |
+| JONEShired in 2nd-April-1981       |
+| MARTINhired in 28th-September-1981 |
+| BLAKEhired in 1st-May-1981         |
+| CLARKhired in 9th-June-1981        |
+| SCOTThired in 9th-December-1982    |
+| KINGhired in 17th-November-1981    |
+| FREDhired in 9th-August-1983       |
+| TURNERhired in 8th-September-1981  |
+| ADAMShired in 12th-January-1983    |
+| Ruhanhired in 9th-August-1983      |
+| Neelhired in 9th-August-1983       |
+| JAMEShired in 3rd-December-1981    |
+| FORDhired in 3rd-December-1981     |
+| HOFFMANhired in 24th-March-1982    |
+| GRASShired in 14th-February-1980   |
+| MILLERhired in 23rd-January-1982   |
+| AARUSHhired in 14th-February-1980  |
+| ALEXhired in 24th-January-1982     |
+| NATASHAhired in 19th-July-1981     |
+| SANGITAhired in 19th-July-1981     |
+| SUPRIYAhired in 19th-July-1981     |
++------------------------------------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,date_format(hiredate,' hired in %D-%M-%Y')from emp;
++----------+--------------------------------------------+
+| ename    | date_format(hiredate,' hired in %D-%M-%Y') |
++----------+--------------------------------------------+
+| GITA     |  hired in 19th-July-1981                   |
+| VRUSHALI |  hired in 19th-July-1981                   |
+| SHARMIN  |  hired in 19th-July-1981                   |
+| BANDISH  |  hired in 19th-July-1981                   |
+| SMITH    |  hired in 17th-December-1980               |
+| AARAV    |  hired in 31st-December-1981               |
+| THOMAS   |  hired in 19th-July-1981                   |
+| ALLEN    |  hired in 20th-February-1981               |
+| WARD     |  hired in 22nd-February-1981               |
+| JONES    |  hired in 2nd-April-1981                   |
+| MARTIN   |  hired in 28th-September-1981              |
+| BLAKE    |  hired in 1st-May-1981                     |
+| CLARK    |  hired in 9th-June-1981                    |
+| SCOTT    |  hired in 9th-December-1982                |
+| KING     |  hired in 17th-November-1981               |
+| FRED     |  hired in 9th-August-1983                  |
+| TURNER   |  hired in 8th-September-1981               |
+| ADAMS    |  hired in 12th-January-1983                |
+| Ruhan    |  hired in 9th-August-1983                  |
+| Neel     |  hired in 9th-August-1983                  |
+| JAMES    |  hired in 3rd-December-1981                |
+| FORD     |  hired in 3rd-December-1981                |
+| HOFFMAN  |  hired in 24th-March-1982                  |
+| GRASS    |  hired in 14th-February-1980               |
+| MILLER   |  hired in 23rd-January-1982                |
+| AARUSH   |  hired in 14th-February-1980               |
+| ALEX     |  hired in 24th-January-1982                |
+| NATASHA  |  hired in 19th-July-1981                   |
+| SANGITA  |  hired in 19th-July-1981                   |
+| SUPRIYA  |  hired in 19th-July-1981                   |
++----------+--------------------------------------------+
+30 rows in set (0.00 sec)
+
+mysql> select CONCAT (ename,date_format(hiredate,' hired in %D-%M-%Y'))from emp;
++-----------------------------------------------------------+
+| CONCAT (ename,date_format(hiredate,' hired in %D-%M-%Y')) |
++-----------------------------------------------------------+
+| GITA hired in 19th-July-1981                              |
+| VRUSHALI hired in 19th-July-1981                          |
+| SHARMIN hired in 19th-July-1981                           |
+| BANDISH hired in 19th-July-1981                           |
+| SMITH hired in 17th-December-1980                         |
+| AARAV hired in 31st-December-1981                         |
+| THOMAS hired in 19th-July-1981                            |
+| ALLEN hired in 20th-February-1981                         |
+| WARD hired in 22nd-February-1981                          |
+| JONES hired in 2nd-April-1981                             |
+| MARTIN hired in 28th-September-1981                       |
+| BLAKE hired in 1st-May-1981                               |
+| CLARK hired in 9th-June-1981                              |
+| SCOTT hired in 9th-December-1982                          |
+| KING hired in 17th-November-1981                          |
+| FRED hired in 9th-August-1983                             |
+| TURNER hired in 8th-September-1981                        |
+| ADAMS hired in 12th-January-1983                          |
+| Ruhan hired in 9th-August-1983                            |
+| Neel hired in 9th-August-1983                             |
+| JAMES hired in 3rd-December-1981                          |
+| FORD hired in 3rd-December-1981                           |
+| HOFFMAN hired in 24th-March-1982                          |
+| GRASS hired in 14th-February-1980                         |
+| MILLER hired in 23rd-January-1982                         |
+| AARUSH hired in 14th-February-1980                        |
+| ALEX hired in 24th-January-1982                           |
+| NATASHA hired in 19th-July-1981                           |
+| SANGITA hired in 19th-July-1981                           |
+| SUPRIYA hired in 19th-July-1981                           |
++-----------------------------------------------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT CURDATE();
++------------+
+| CURDATE()  |
++------------+
+| 2026-04-28 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CURDATE(),LAST_DAY(CURDATE());
++------------+---------------------+
+| CURDATE()  | LAST_DAY(CURDATE()) |
++------------+---------------------+
+| 2026-04-28 | 2026-04-30          |
++------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CURDATE(),100'FIRST DATE',LAST_DAY(CURDATE()) 'LAST DATE';
++------------+------------+------------+
+| CURDATE()  | FIRST DATE | LAST DATE  |
++------------+------------+------------+
+| 2026-04-28 |        100 | 2026-04-30 |
++------------+------------+------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ELT(1,'HELLO','WJEJD');
++------------------------+
+| ELT(1,'HELLO','WJEJD') |
++------------------------+
+| HELLO                  |
++------------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT ELT(1,'HELLO','WJEJD')AS "E1";
++-------+
+| E1    |
++-------+
+| HELLO |
++-------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ELT(1,'HELLO','MAYURI');
++-------------------------+
+| ELT(1,'HELLO','MAYURI') |
++-------------------------+
+| HELLO                   |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ELT(1,'HELLO','MAYURI')R1;
++-------+
+| R1    |
++-------+
+| HELLO |
++-------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ELT(1,-1,'HELLO','MAYURI');
++----------------------------+
+| ELT(1,-1,'HELLO','MAYURI') |
++----------------------------+
+| -1                         |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ELT(3,-1,'HELLO','MAYURI');
++----------------------------+
+| ELT(3,-1,'HELLO','MAYURI') |
++----------------------------+
+| MAYURI                     |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ELT(0,-1,'HELLO','MAYURI');
++----------------------------+
+| ELT(0,-1,'HELLO','MAYURI') |
++----------------------------+
+| NULL                       |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ELT(1,ENAME,JOB) FROM EMP;
++------------------+
+| ELT(1,ENAME,JOB) |
++------------------+
+| GITA             |
+| VRUSHALI         |
+| SHARMIN          |
+| BANDISH          |
+| SMITH            |
+| AARAV            |
+| THOMAS           |
+| ALLEN            |
+| WARD             |
+| JONES            |
+| MARTIN           |
+| BLAKE            |
+| CLARK            |
+| SCOTT            |
+| KING             |
+| FRED             |
+| TURNER           |
+| ADAMS            |
+| Ruhan            |
+| Neel             |
+| JAMES            |
+| FORD             |
+| HOFFMAN          |
+| GRASS            |
+| MILLER           |
+| AARUSH           |
+| ALEX             |
+| NATASHA          |
+| SANGITA          |
+| SUPRIYA          |
++------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT ELT(2,ENAME,JOB) FROM EMP;
++---------------------+
+| ELT(2,ENAME,JOB)    |
++---------------------+
+| Compliance officers |
+| Compliance officers |
+| Public Relation     |
+| Public Relation     |
+| CLERK               |
+| CLERK               |
+| CLERK               |
+| SALESMAN            |
+| SALESMAN            |
+| MANAGER             |
+| SALESMAN            |
+| MANAGER             |
+| MANAGER             |
+| ANALYST             |
+| PRESIDENT           |
+| vice PRESIDENT      |
+| SALESMAN            |
+| CLERK               |
+| Network             |
+| vice PRESIDENT      |
+| CLERK               |
+| ANALYST             |
+| MANAGER             |
+| SALESMAN            |
+| CLERK               |
+| SALESMAN            |
+| MANAGER             |
+| CLERK               |
+| Compliance officers |
+| ANALYST             |
++---------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT ELT(4,ENAME,JOB) FROM EMP;
++------------------+
+| ELT(4,ENAME,JOB) |
++------------------+
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
+| NULL             |
++------------------+
+30 rows in set (0.00 sec)
+
+mysql> TABLE STUDENT;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1017 | sanchali |    1 | NULL                   | sanchaliJ@gmail.com    |
++-----------+----------+------+------------------------+------------------------+
+13 rows in set (0.02 sec)
+
+mysql> SELECT NAME,RNK ,ELT(RNK,'+A','+B','FAIL')R1 FROM STUDENT;
++----------+------+------+
+| NAME     | RNK  | R1   |
++----------+------+------+
+| Saleel   |    1 | +A   |
+| Sharmin  |    1 | +A   |
+| Vrushali |    2 | +B   |
+| Ruhan    |    3 | FAIL |
+| Neel     |    2 | +B   |
+| Deep     |    1 | +A   |
+| Nitish   |    4 | NULL |
+| Gau      |    5 | NULL |
+| Mai      |    4 | NULL |
+| Bipin    |    5 | NULL |
+| Natasha  |    3 | FAIL |
+| Bandish  |    2 | +B   |
+| sanchali |    1 | +A   |
++----------+------+------+
+13 rows in set (0.00 sec)
