@@ -4080,3 +4080,5 @@ mysql> SELECT NAME,RNK ,ELT(RNK,'+A','+B','FAIL')R1 FROM STUDENT;
 | sanchali |    1 | +A   |
 +----------+------+------+
 13 rows in set (0.00 sec)
+
+Class Work 5:
