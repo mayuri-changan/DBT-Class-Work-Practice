@@ -4371,3 +4371,27 @@ mysql> select cast(char(97)as char);
 1 row in set (0.00 sec)
 
 
+mysql> select cast(char(65)as char);
++-----------------------+
+| cast(char(65)as char) |
++-----------------------+
+| A                     |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> select 'saleel';
++--------+
+| saleel |
++--------+
+| saleel |
++--------+
+1 row in set (0.00 sec)
+
+
+mysql> select 'saleel'R1 ,RPAD('SALEEL',20,'*')R2;
++--------+----------------------+
+| R1     | R2                   |
++--------+----------------------+
+| saleel | SALEEL************** |
++--------+----------------------+
+1 row in set (0.00 sec)
