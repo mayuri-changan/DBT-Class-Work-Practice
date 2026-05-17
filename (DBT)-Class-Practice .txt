@@ -4806,6 +4806,40 @@ mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2,trim('       mayuri         ')as r3;
 +--------+--------+--------+
 1 row in set (0.00 sec)
 
+mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2,rtrim('       mayuri         ')as r3;
++--------+--------+---------------+
+| R1     | r2     | r3            |
++--------+--------+---------------+
+| SALEEL | Saleel |        mayuri |
++--------+--------+---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2,ltrim('       mayuri         ')as r3;
++--------+--------+-----------------+
+| R1     | r2     | r3              |
++--------+--------+-----------------+
+| SALEEL | Saleel | mayuri          |
++--------+--------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2,ltrim('       mayuri         ')as ^C;
+mysql> select * from teams;
++--------+------------------------------------------------+
+| TeamID | Members                                        |
++--------+------------------------------------------------+
+|      1 | Saleel, Sharmin, Vrushali, Gau                 |
+|      2 | Kaushal, Natsha, Ruhan                         |
+|      3 | Lalu, Brooke, Boy, Naru, Bhavin                |
+|      4 | Bhuru, Baba, Anoop, Meera, Boy                 |
+|      5 | Dilu, Fredy                                    |
+|      6 | Daigo, Harshil, Boy, Raju, Bothyo              |
+|      7 | Bandish, Supriya, Sangita                      |
+|      8 | Monika, Karishma, William, Varsha, Jack, Grace |
+|      9 | Vasant, Neel                                   |
+|     10 | Nitish, Bipin, Mai, Didi                       |
++--------+------------------------------------------------+
+10 rows in set (0.03 sec)
+
 
 
 
