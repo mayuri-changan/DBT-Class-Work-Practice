@@ -4840,6 +4840,242 @@ mysql> select * from teams;
 +--------+------------------------------------------------+
 10 rows in set (0.03 sec)
 
+mysql> select teamid,members,find_in_set('boy',members) as r1 from teams;
++--------+------------------------------------------------+------+
+| teamid | members                                        | r1   |
++--------+------------------------------------------------+------+
+|      1 | Saleel, Sharmin, Vrushali, Gau                 |    0 |
+|      2 | Kaushal, Natsha, Ruhan                         |    0 |
+|      3 | Lalu, Brooke, Boy, Naru, Bhavin                |    0 |
+|      4 | Bhuru, Baba, Anoop, Meera, Boy                 |    0 |
+|      5 | Dilu, Fredy                                    |    0 |
+|      6 | Daigo, Harshil, Boy, Raju, Bothyo              |    0 |
+|      7 | Bandish, Supriya, Sangita                      |    0 |
+|      8 | Monika, Karishma, William, Varsha, Jack, Grace |    0 |
+|      9 | Vasant, Neel                                   |    0 |
+|     10 | Nitish, Bipin, Mai, Didi                       |    0 |
++--------+------------------------------------------------+------+
+10 rows in set (0.00 sec)
+mysql> select 'mayuri changan' as name;
++----------------+
+| name           |
++----------------+
+| mayuri changan |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_d1        |
++---------------------+
+| a                   |
+| activity            |
+| agent               |
+| airline_seats       |
+| andor               |
+| atm                 |
+| b                   |
+| bank                |
+| bankloan            |
+| batch_schedule      |
+| betweensalary       |
+| bitwise             |
+| blanktablea         |
+| blanktableb         |
+| blog                |
+| bonus               |
+| books               |
+| brands              |
+| bus_stops           |
+| cafe                |
+| candidate           |
+| cardpayments        |
+| cars                |
+| cashpayments        |
+| categories          |
+| category            |
+| city                |
+| classandsubjects    |
+| client              |
+| cnumbers            |
+| coalesce            |
+| comments            |
+| company             |
+| countnulls          |
+| countnumbers        |
+| cricketwinnerteam   |
+| customer            |
+| customers           |
+| demodept1           |
+| demodept2           |
+| dept                |
+| dept1               |
+| dhl                 |
+| docs                |
+| doctor              |
+| doctorvisits        |
+| dummy               |
+| duplicate           |
+| emp                 |
+| emp1                |
+| emp2                |
+| emp_attendance      |
+| emp_cards           |
+| emp_phone           |
+| empj                |
+| envelope            |
+| facebook            |
+| fedex               |
+| food                |
+| food_category_tags  |
+| food_items          |
+| fromstoreorders     |
+| fruits              |
+| fullname            |
+| hall_ticket         |
+| hobby               |
+| ipl                 |
+| item                |
+| job_list            |
+| key_parts           |
+| labtestlist         |
+| leading_zeroes      |
+| leadtable           |
+| licence             |
+| linkedin            |
+| location            |
+| managers            |
+| mass_table          |
+| medicinelist        |
+| menucard            |
+| missingnumbers      |
+| nearest             |
+| new                 |
+| newbooks            |
+| null1               |
+| null2               |
+| nullif              |
+| numberstring        |
+| onlineorders        |
+| ord                 |
+| order1              |
+| order_items         |
+| orderdetails        |
+| orders              |
+| overlapping_dates   |
+| overtime            |
+| patient             |
+| phonecall           |
+| pivot_table         |
+| plumber             |
+| plumber_service_map |
+| points              |
+| population          |
+| price               |
+| product             |
+| product_sales       |
+| products            |
+| pune_metro_stations |
+| quarterly_revenue   |
+| r                   |
+| r1                  |
+| r2                  |
+| races               |
+| regexpr             |
+| repeatingnumbers    |
+| replacedept         |
+| reservations        |
+| revenue             |
+| rockets             |
+| room_assigned       |
+| room_staff          |
+| rooms               |
+| runners             |
+| runningserver       |
+| sales               |
+| sales1              |
+| sales_channel       |
+| salespeople         |
+| salesperson         |
+| salgrade            |
+| security            |
+| server              |
+| service             |
+| seta                |
+| setb                |
+| shop                |
+| softdrink           |
+| sort                |
+| sourcecity          |
+| sourcenames         |
+| stadium             |
+| stages              |
+| states              |
+| station             |
+| status              |
+| stocks              |
+| stringnumber        |
+| student             |
+| swapcity            |
+| tablea              |
+| tableaa             |
+| tableb              |
+| tablebb             |
+| targetcity          |
+| targetnames         |
+| tasks               |
+| teams               |
+| temp1               |
+| trainers            |
+| trains              |
+| traintimetable      |
+| transactions        |
+| unpivot_table       |
+| ups                 |
+| vote_response       |
+| votes               |
+| warehouse           |
+| x                   |
+| year_of_service     |
+| yearly_revenue      |
+| years               |
+| z                   |
++---------------------+
+172 rows in set (0.01 sec)
+
+mysql> select * from votes;
++----+-------------+
+| id | candidateID |
++----+-------------+
+|  1 |           4 |
+|  2 |           3 |
+|  3 |           1 |
+|  4 |           2 |
+|  5 |           2 |
+|  6 |           1 |
+|  7 |           2 |
+|  8 |           3 |
+|  9 |           1 |
+| 10 |           2 |
+| 11 |           1 |
+| 12 |           2 |
+| 13 |           3 |
+| 14 |           1 |
+| 15 |           1 |
+| 16 |           4 |
+| 17 |           2 |
+| 18 |           4 |
+| 19 |           2 |
+| 20 |           1 |
+| 21 |           2 |
+| 22 |           1 |
+| 23 |           3 |
+| 24 |           3 |
+| 25 |           1 |
+| 26 |           1 |
+| 27 |           3 |
++----+-------------+
+27 rows in set (0.02 sec)
 
 
 
