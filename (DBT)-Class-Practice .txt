@@ -4742,6 +4742,70 @@ mysql> SELECT FIND_IN_SET('MAYURI','PRIYA,TUSHAR,SWAP,MAYURI')R1;
 +----+
 1 row in set (0.00 sec)
 
+mysql> SELECT 'SALEEL';
++--------+
+| SALEEL |
++--------+
+| SALEEL |
++--------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 'SALEEL'AS R1;
++--------+
+| R1     |
++--------+
+| SALEEL |
++--------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2;
++--------+--------+
+| R1     | r2     |
++--------+--------+
+| SALEEL | Saleel |
++--------+--------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2,'       mayuri'as r3;
++--------+--------+---------------+
+| R1     | r2     | r3            |
++--------+--------+---------------+
+| SALEEL | Saleel |        mayuri |
++--------+--------+---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2,rtrim('       mayuri')as r3;
++--------+--------+---------------+
+| R1     | r2     | r3            |
++--------+--------+---------------+
+| SALEEL | Saleel |        mayuri |
++--------+--------+---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2,ltrim('       mayuri')as r3;
++--------+--------+--------+
+| R1     | r2     | r3     |
++--------+--------+--------+
+| SALEEL | Saleel | mayuri |
++--------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2,ltrim('       mayuri         ')as r3;
++--------+--------+-----------------+
+| R1     | r2     | r3              |
++--------+--------+-----------------+
+| SALEEL | Saleel | mayuri          |
++--------+--------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT 'SALEEL'AS R1,'Saleel'as r2,trim('       mayuri         ')as r3;
++--------+--------+--------+
+| R1     | r2     | r3     |
++--------+--------+--------+
+| SALEEL | Saleel | mayuri |
++--------+--------+--------+
+1 row in set (0.00 sec)
+
 
 
 
